@@ -15,20 +15,17 @@ return new class extends Migration
             $table->id();
             $table->unsignedBigInteger('colaborador_id');
             $table->foreign('colaborador_id')->references('id')->on('colaborador')->onDelete('cascade');
-            $table->unsignedBigInteger('veiculo_id');
-            $table->foreign('veiculo_id')->references('id')->on('veiculos')->onDelete('cascade');
+            $table->unsignedBigInteger('veiculos_id');
+            $table->foreign('veiculos_id')->references('id')->on('veiculos')->onDelete('cascade');
             $table->unsignedBigInteger('carro_colaborador_id');
             $table->foreign('carro_colaborador_id')->references('id')->on('carro_colaborador')->onDelete('cascade');
-            $table->string('entrada');
-            $table->string('saída');
+            $table->timestamp('entrada');
+            $table->timestamp('saida')->nullable();
             
             $table->timestamps();
         });
     }
 
-    /**
-     * Reverse the migrations.
-     */
     public function down(): void
     {
        Schema::table('carro_movimentacoes', function (Blueprint $table) {
