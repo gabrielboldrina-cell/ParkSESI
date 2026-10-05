@@ -9,8 +9,8 @@
     <title>@yield('title')</title>
 </head>
 <body>
-    <body style="background-image: url(a.png); background-size: cover;
- background-repeat: no-repeat,">
+    <body class="bg-dark text-light min-vh-100">
     @yield('content')
 </body>
+
 </html>

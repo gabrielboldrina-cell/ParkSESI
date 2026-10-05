@@ -13,7 +13,7 @@
     <title>@yield('title')</title>
 </head>
 
-<body  style="background-image: url(a.png); background-size: cover;
+<body style="background-image: url(a.png); background-size: cover;
  background-repeat: no-repeat," >
 
     <nav class="navbar navbar-expand-lg bg-body-tertiary navbar bg-body-tertiary">
