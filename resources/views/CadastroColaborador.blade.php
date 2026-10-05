@@ -3,9 +3,10 @@
 
 
 @section('content')
+<link rel="stylesheet" href="CadastroColaborador.css">
 
     <div class="row justify-content-center d-flex" style="margin-top: 150px;">
-        <div class= "col-9 rounded shadow-lg p-3 mb-5 mt-4 bg-body-tertiary">
+        <div class= "col-9 rounded shadow-lg p-3 mb-5 mt-4 bg-danger">
             <h2 class='text-center mt-4 text-dark'>Cadastro de Colaborador</h2>
             <div class="row justify-content-center d-flex">
                 <div class="col-lg-6 col-md-6 col-sm-12 mt-3">
