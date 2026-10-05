@@ -5,6 +5,7 @@ use App\Http\Controllers\ColaboradorController;
 use App\Http\Controllers\UsuarioController;
 use App\Http\Controllers\IndexController;
 use App\Http\Controllers\Dashboard;
+use App\Http\Controllers\PainelGeralController;
 
 Route::get('/', function () {
     return view('welcome');
@@ -14,3 +15,4 @@ Route::get('/CadastroColaborador', [ColaboradorController::class, 'CadastroContr
 Route::get('/CadastroUsuario', [UsuarioController::class, 'CadastroController'])->name('CadastroUsuario');
 Route::get('/Index', [IndexController::class, 'Index'])->name('Index');
 Route::get('/Dashboard', [Dashboard::class, 'Dashboard'])->name('Dashboard');
+Route::get('/PainelGeral', [PainelGeralController::class, 'PainelGeral'])->name('PainelGeral');

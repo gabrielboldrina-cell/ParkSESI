@@ -13,10 +13,6 @@ return new class extends Migration
     {
         Schema::create('carro_movimentacoes', function (Blueprint $table) {
             $table->id();
-            $table->unsignedBigInteger('colaborador_id');
-            $table->foreign('colaborador_id')->references('id')->on('colaborador')->onDelete('cascade');
-            $table->unsignedBigInteger('veiculos_id');
-            $table->foreign('veiculos_id')->references('id')->on('veiculos')->onDelete('cascade');
             $table->unsignedBigInteger('carro_colaborador_id');
             $table->foreign('carro_colaborador_id')->references('id')->on('carro_colaborador')->onDelete('cascade');
             $table->timestamp('entrada');
@@ -29,10 +25,6 @@ return new class extends Migration
     public function down(): void
     {
        Schema::table('carro_movimentacoes', function (Blueprint $table) {
-            $table->dropForeign(['colaborador_id']);
-            $table->dropColumn('colaborador_id');
-            $table->dropForeign(['veiculos_id']);
-            $table->dropColumn('veiculos_id');
             $table->dropForeign(['carro_colaborador_id']);
             $table->dropColumn('carro_colaborador_id');
         });

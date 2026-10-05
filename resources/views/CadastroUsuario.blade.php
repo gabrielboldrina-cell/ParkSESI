@@ -8,7 +8,7 @@
         <div class= "col-9 rounded shadow-lg p-3 mb-5 mt-4 bg-body-tertiary">
             <h2 class='text-center mt-4'>Cadastro de Usuario</h2>
             <div class="row justify-content-center d-flex">
-                <div class="col-lg-6 col-md-6 col-sm-12 mt-3">              
+                <div class="col-lg-6 col-md-6 col-sm-12 mt-3">
                     <label for="nome" class="form-label">Nome</label>
                     <input type="text" class="form-control form-control-sm" id="nome" name="nome" placeholder="Digite seu nome">
                 </div>
