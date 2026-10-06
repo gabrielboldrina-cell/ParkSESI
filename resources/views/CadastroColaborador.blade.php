@@ -4,6 +4,7 @@
 @section('content')
 <link rel="stylesheet" href="{{ asset('CadastroColaborador.css') }}">
 
+
 <main class="cadastro-colaborador-page d-flex align-items-center justify-content-center">
     <section class="card-cadastro" aria-labelledby="titulo-cadastro">
         <h1 id="titulo-cadastro" class="titulo-cadastro">Cadastro de Colaborador</h1>

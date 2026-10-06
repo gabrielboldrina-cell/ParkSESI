@@ -4,6 +4,7 @@
 
 @section('content')
 
+
     <div class="row justify-content-center d-flex" style="margin-top: 150px;">
         <div class= "col-9 rounded shadow-lg p-3 mb-5 mt-4 bg-body-tertiary">
             <h2 class='text-center mt-4'>Cadastro de Usuario</h2>
