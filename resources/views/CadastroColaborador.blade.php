@@ -1,43 +1,42 @@
 @extends('layouts.login')
 @section('title', 'Cadastro de Colaborador')
 
-
 @section('content')
-<link rel="stylesheet" href="CadastroColaborador.css">
+<link rel="stylesheet" href="{{ asset('CadastroColaborador.css') }}">
 
-    <div class="row justify-content-center d-flex" style="margin-top: 150px;">
-        <div class= "col-9 rounded shadow-lg p-3 mb-5 mt-4 bg-danger">
-            <h2 class='text-center mt-4 text-dark'>Cadastro de Colaborador</h2>
-            <div class="row justify-content-center d-flex">
-                <div class="col-lg-6 col-md-6 col-sm-12 mt-3">
-                    <label for="nome" class="form-label text-dark">Nome</label>
-                    <input type="text" class="form-control" id="nome" name="nome" placeholder="Digite o nome do colaborador ">
-                </div>
-                <div class="col-lg-6 col-md-6 col-sm-12 mt-3">
-                    <label for="Nif" class="form-label text-dark">Nif</label>
-                    <input type="text" class="form-control" id="Nif" name="Nif" placeholder="Digite o Nif do colaborador">
-                </div>
-                <div class="col-lg-6 col-md-6 col-sm-12 mt-3">
-                    <label for="Email" class="form-label text-dark">Email</label>
-                    <input type="text" class="form-control"  id="Email" name="Email" placeholder="Digite o Email do colaborador">
-                </div>
-                <div class="col-lg-6 col-md-6 col-sm-12 mt-3">
-                    <label for="telefone" class="form-label text-dark">telefone</label>
-                    <input type="Text" class="form-control" maxlength="15" id="Telefone" name="Telefone" placeholder="Digite o telefone do colaborador">
-                </div>
-                <div class="col-lg-6 col-md-6 col-sm-12 mt-3">
-                    <label for="Departamento" class="form-label text-dark">Departamento</label>
-                    <input type="text" class="form-control" id="Departamento" name="Departamento" placeholder="Digite o departamento do colaborador">
-                </div>
-                <div class="col-lg-6 col-md-6 col-sm-12 mt-3">
-                    <label for="Confirmar Senha" class="form-label text-dark">Situação</label>
-                    <input type="text" class="form-control"  id="Confirmar Senha" name="Confirmar Senha" placeholder="Digite a situação do colaborador">
-                </div>
-                <div class="col-4 mt-2 justify-content-center d-flex">
-                    <button type="button" class="btn btn-primary margin-auto">Cadastrar Colaborador</button>
-                </div>
+<main class="cadastro-colaborador-page d-flex align-items-center justify-content-center">
+    <section class="card-cadastro" aria-labelledby="titulo-cadastro">
+        <h1 id="titulo-cadastro" class="titulo-cadastro">Cadastro de Colaborador</h1>
+
+        <div class="row g-3">
+            <div class="col-md-6">
+                <label for="email" class="form-label">Email</label>
+                <input type="email" class="form-control" id="email" name="email" placeholder="nome@exemplo.com">
+            </div>
+            <div class="col-md-6">
+                <label for="nome" class="form-label">Nome Completo</label>
+                <input type="text" class="form-control" id="nome" name="nome" placeholder="Digite o nome completo">
+            </div>
+            <div class="col-md-6">
+                <label for="departamento" class="form-label">Departamento</label>
+                <input type="text" class="form-control" id="departamento" name="departamento" placeholder="Ex: RH">
+            </div>
+            <div class="col-md-6">
+                <label for="telefone" class="form-label">Telefone</label>
+                <input type="tel" class="form-control" maxlength="15" id="telefone" name="telefone" placeholder="(15) 12345-7890">
+            </div>
+            <div class="col-md-6">
+                <label for="situacao" class="form-label">Situação</label>
+                <input type="text" class="form-control" id="situacao" name="situacao" placeholder="Ex: Ativo">
+            </div>
+            <div class="col-md-6">
+                <label for="nif" class="form-label">NIF</label>
+                <input type="text" class="form-control" id="nif" name="nif" placeholder="NIF...">
+            </div>
+            <div class="col-12 mt-4">
+                <button type="button" class="btn btn-cadastrar">Cadastrar</button>
             </div>
         </div>
-    </div>
-
-@endsection 
+    </section>
+</main>
+@endsection
