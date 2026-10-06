@@ -10,3 +10,4 @@ Route::get('/user', function (Request $request) {
 })->middleware('auth:sanctum');
 
 Route::post('/usuario_cadastro', [UsuarioController::class, 'salvar_usuario']);
+Route::post('/colaborador_cadastro', [ColaboradorController::class, 'salvar_colaborador']);
