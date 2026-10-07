@@ -1,54 +1,10 @@
-.cadastro-colaborador-page {
-    min-height: 100vh;
-    padding: 1rem;
+/* Fundo cinza da página (do protótipo) */
+body {
     background-color: #808080;
 }
-
-.card-cadastro {
-    width: min(74vw, 960px);
-    padding: 1.25rem;
+ 
+/* Vermelho escuro do cartão (o Bootstrap não tem essa cor) */
+.bg-parksesi {
     background-color: #8b1111;
-    border: 1px solid #000;
-    border-radius: 1rem;
-    box-shadow: 0 0.5rem 1rem rgb(0 0 0 / 20%);
 }
-
-.titulo-cadastro {
-    margin-bottom: 0.75rem;
-    color: #fff;
-    font-size: 1.25rem;
-    font-weight: 700;
-}
-
-.card-cadastro .form-label {
-    margin-bottom: 0.25rem;
-    color: #fff;
-    font-size: 0.65rem;
-}
-
-.card-cadastro .form-control {
-    min-height: 2.25rem;
-    border: 1px solid #333;
-    border-radius: 0.5rem;
-    font-size: 0.8rem;
-}
-
-.btn-cadastrar {
-    padding: 0.35rem 0.75rem;
-    color: #fff;
-    background-color: #000;
-    border: 0;
-    border-radius: 50rem;
-    font-size: 0.7rem;
-}
-
-.btn-cadastrar:hover {
-    color: #fff;
-    background-color: #222;
-}
-
-@media (max-width: 767.98px) {
-    .card-cadastro {
-        width: 100%;
-    }
-}
+ 

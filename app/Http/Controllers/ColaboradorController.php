@@ -16,7 +16,7 @@ class ColaboradorController extends Controller
         $request->validate([
             'nome' => 'required|string|max:255',
             'email' => 'required|string|email|max:255|unique:colaboradores',
-            'senha' => 'required|string|',
+            'senha' => 'required|string|confirmed',
             'tipo' => 'required|string',
         ]);
 
@@ -32,7 +32,7 @@ class ColaboradorController extends Controller
             return response ()->json(['message' => 'Colaborador cadastrado com sucesso!', 'erro' => 'n'], 200);
         }
         catch(\Throwable $th){
-            return response ()->json(['message' => 'Erro ao salvar colaborador.', 'erro' => 's'], 200);
+            return response ()->json(['message' => 'Erro ao cadastrar colaborador.', 'erro' => 's'], 200);
         }
     }
 
