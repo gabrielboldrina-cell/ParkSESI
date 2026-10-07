@@ -7,8 +7,8 @@ use Illuminate\Http\Request;
 class Dashboard extends Controller
 {
    public function Dashboard(Request $request){
-        return view('Dashboard_Admin');}
+        return view('dashboard');}
 
 
-        
+
 }

@@ -14,5 +14,5 @@ Route::get('/', function () {
 Route::get('/CadastroColaborador', [ColaboradorController::class, 'CadastroController'])->name('CadastroColaborador');
 Route::get('/CadastroUsuario', [UsuarioController::class, 'CadastroController'])->name('CadastroUsuario');
 Route::get('/Index', [IndexController::class, 'Index'])->name('Index');
-Route::get('/Dashboard', [Dashboard::class, 'Dashboard'])->name('Dashboard');
-Route::get('/PainelGeral', [PainelGeralController::class, 'PainelGeral'])->name('PainelGeral');
+Route::get('/dashboard', [Dashboard::class, 'dashboard'])->name('dashboard');
+Route::get('/painel_geral', [PainelGeralController::class, 'painel_geral'])->name('painel_geral');

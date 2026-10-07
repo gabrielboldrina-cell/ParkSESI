@@ -9,7 +9,7 @@ use Illuminate\Support\Facades\Hash;
 class PainelGeralController extends Controller
 {
     public function PainelGeral(Request $request){
-        return view('PainelGeral');
+        return view('painel_geral');
     }
 
         public function ver_usuario(Request $request){
