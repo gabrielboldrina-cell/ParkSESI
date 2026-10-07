@@ -19,7 +19,9 @@ class ColaboradorController extends Controller
             'email' => 'required|string|email|max:255',
             'telefone' => 'required|string|max:15',
             'departamento' => 'required|string|max:255',
-            'situacao' => 'required|string|'
+            'situacao' => 'required|string|',
+            'saida_almoco' => '|string|max:255',
+            'volta_almoco' => '|string|max:255'
         ]);
 
         try{
@@ -30,6 +32,8 @@ class ColaboradorController extends Controller
             $colaborador->telefone = $request->telefone;
             $colaborador->departamento = $request->departamento;
             $colaborador->situacao = $request->situacao;
+            $colaborador->saida_almoco = $request->saida_almoco;
+            $colaborador->volta_almoco = $request->volta_almoco;
 
             $colaborador->save();
 

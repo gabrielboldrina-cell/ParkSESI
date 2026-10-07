@@ -19,8 +19,8 @@ return new class extends Migration
             $table->string('telefone');
             $table->string('departamento');
             $table->string('situacao');
-            $table->time('Saída Almoço');
-            $table->time('Entrada Almoço');
+            $table->time('saida_almoco');
+            $table->time('volta_almoco');
             $table->timestamps();
         });
     }
