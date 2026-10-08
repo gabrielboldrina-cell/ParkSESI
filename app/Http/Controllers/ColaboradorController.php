@@ -4,7 +4,7 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\Models\Colaborador;
-use Illuminate\Support\Facades\Hash;
+
 
 class ColaboradorController extends Controller
 {
@@ -43,10 +43,67 @@ class ColaboradorController extends Controller
             return response ()->json(['message' => 'Erro ao cadastrar colaborador.', 'erro'  => $th->getMessage()], 200);
         }
     }
-/* 
-        if($usuario->cpf != $request->cpf){
-        $usuario_cpf_igual = Usuario::where('cpf', $request->cpf)->first();
-        if($usuario_cpf_igual){
-            return response()->json(['message' => 'CPF já cadastrado!', 'erro' => 's'], 200);
-        }*/
+
+    public function listar_colaboradores(Request $request){
+        $colaborador=Colaborador::all();
+        return response()->json(['colaborador' => $colaborador], 200);
+    } 
+
+    public function alterar_colaborador(Request $request){
+
+        $request->validate([
+        'id' => 'required|integer|exists:colaborador,id',
+        'nome' => 'required|string|max:255',
+        'nif' => 'required|string|',
+        'email' => 'required|string|email|max:255|',
+        'telefone' => 'required|string|max:15',
+        'departamento' => 'required|string|max:255',
+        'situacao' => 'required|string|',
+        'saida_almoco' => 'required|string|',
+        'volta_almoco' => 'required|string|'
+    ]);
+    
+        try { 
+
+        $colaborador = Colaborador::find($request->id);
+
+        if($colaborador->email != $request->cpf){
+             $colaborador_email_igual = Colaborador::where('email', $request->email)->first();
+            if($colaborador_email_igual){
+                return response()->json(['message' => 'Email já cadastrado!', 'erro' => 's'], 200);
+                }
+            }
+            $colaborador->nome = $request->nome;
+            $colaborador->nif = $request->nif;
+            $colaborador->email = $request->email;
+            $colaborador->telefone = $request->telefone;
+            $colaborador->departamento = $request->departamento;
+            $colaborador->situacao = $request->situacao;
+            $colaborador->saida_almoco = $request->saida_almoco;
+            $colaborador->volta_almoco = $request->volta_almoco;
+
+            $colaborador->save();
+
+            return response()->json(['message' => 'Colaborador alterado com sucesso!', 'erro' => 'n'], 200);
+        } catch (\Throwable $th) {
+            return response()->json(['message' => 'Erro ao alterar colaborador: ' . $th->getMessage(), 'erro' => 's'], 200);
+        }
+    }
+    
+    public function deletar_colaborador(Request $request){
+        $request->validate([
+            'id' => 'required|integer|exists:colaborador,id',
+        ]);
+    
+        try {
+            $colaborador = Colaborador::find($request->id);
+            $colaborador->delete();
+    
+            return response()->json(['message' => 'Colaborador deletado com sucesso!', 'erro' => 'n'], 200);
+        } catch (\Throwable $th) {
+            return response()->json(['message' => 'Erro ao deletar colaborador: ' . $th->getMessage(), 'erro' => 's'], 300);
+        }
+    }   
+    
+
 }

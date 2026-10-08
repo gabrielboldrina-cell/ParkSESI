@@ -7,7 +7,7 @@ use Illuminate\Database\Eloquent\Model;
 class Colaborador extends Model
 {
     protected $table = 'colaborador';
-    public $timestamps = false;
+
 
     protected $fillable = [
         'nome',

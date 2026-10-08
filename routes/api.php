@@ -4,6 +4,7 @@ use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\ColaboradorController;
 use App\Http\Controllers\UsuarioController;
+use App\Http\Controllers\Dashboard;
 
 Route::get('/user', function (Request $request) {
     return $request->user();
@@ -19,4 +20,6 @@ Route::get('/listar_usuarios_simples', [UsuarioController::class, 'listar_usuari
 
 //Rotas para o CRUD de colaboradores
 Route::post('/salvar_colaborador', [ColaboradorController::class, 'salvar_colaborador']);
-
+Route::put('/alterar_colaborador', [ColaboradorController::class, 'alterar_colaborador']);
+Route::delete('/deletar_colaborador', [ColaboradorController::class, 'deletar_colaborador']);
+Route::get('/listar_colaboradores', [ColaboradorController::class, 'listar_colaboradores'])->name('listar_colaboradores');

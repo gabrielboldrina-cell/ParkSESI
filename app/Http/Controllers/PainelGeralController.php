@@ -28,10 +28,10 @@ class PainelGeralController extends Controller
             return response()->json(['usuarios' => $usuarios], 200);
         }
 
-        /* public function listar_usuarios_simples(Request $request){
+        public function listar_usuarios_simples(Request $request){
             $usuarios=Usuario::select( 'nome', 'email')->get();
             return response()->json(['usuarios' => $usuarios], 200);
-        } */
+        } 
 
        public function alterar_usuario(Request $request){
 
