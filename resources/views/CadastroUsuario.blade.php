@@ -13,8 +13,7 @@
                     <h2 class="fw-bold mb-1">Cadastro de usuário</h2>
                     <p class="mb-4 opacity-75">Preencha os dados abaixo para criar uma nova conta no sistema da portaria.</p>
 
-                    <form method="POST" action="#"> {{-- troque pelo action da sua rota --}}
-                        @csrf
+                    <form method="POST" action="=#">
 
                         <div class="row g-3">
                             <div class="col-12">
