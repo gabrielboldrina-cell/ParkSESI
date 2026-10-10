@@ -17,9 +17,6 @@ return new class extends Migration
             $table->foreign('carro_colaborador_id')->references('id')->on('carro_colaborador')->onDelete('cascade');
             $table->timestamp('entrada');
             $table->timestamp('saida')->nullable();
-            $table->timestamp('saida_almoco')->nullable();
-            $table->timestamp('volta_almoco')->nullable();
-            
             $table->timestamps();
         });
     }
