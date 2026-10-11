@@ -1,9 +1,9 @@
-/* Fundo cinza da página (do protótipo) */
+
 body {
     background-color: #808080;
 }
  
-/* Vermelho escuro do cartão (o Bootstrap não tem essa cor) */
+
 .bg-parksesi {
     background-color: #8b1111;
 }
