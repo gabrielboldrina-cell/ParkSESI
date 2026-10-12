@@ -48,6 +48,11 @@ class ColaboradorController extends Controller
         $colaborador=Colaborador::all();
         return response()->json(['colaborador' => $colaborador], 200);
     } 
+    
+    public function listar_colaboradores_simples(Request $request){
+        $colaborador=Colaborador::select('id', 'nome')->get();
+        return response()->json(['colaborador' => $colaborador], 200);
+    }
 
     public function alterar_colaborador(Request $request){
 
