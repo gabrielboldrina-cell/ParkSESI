@@ -106,7 +106,7 @@ class ColaboradorController extends Controller
     
             return response()->json(['message' => 'Colaborador deletado com sucesso!', 'erro' => 'n'], 200);
         } catch (\Throwable $th) {
-            return response()->json(['message' => 'Erro ao deletar colaborador: ' . $th->getMessage(), 'erro' => 's'], 300);
+            return response()->json(['message' => 'Erro ao deletar colaborador: ' . $th->getMessage(), 'erro' => 's'], 200);
         }
     }   
     

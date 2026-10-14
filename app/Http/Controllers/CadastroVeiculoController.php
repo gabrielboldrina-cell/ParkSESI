@@ -16,7 +16,7 @@ class CadastroVeiculoController extends Controller
             'placa' => 'required|string|max:7|unique:veiculos',
             'modelo' => 'required|string|max:255',
             'cor' => 'required|string|max:255',
-            'ano' => 'required|integer|min:1900|max:' . (date('Y') + 1),
+            'ano' => 'required|integer|min:1900|max:' . (date('Y')),
         ]);
 
         try{
@@ -48,7 +48,7 @@ class CadastroVeiculoController extends Controller
         'placa' => 'required|string|max:7|unique:veiculo,placa,' . $request->id,
         'modelo' => 'required|string|max:255',
         'cor' => 'required|string|max:255',
-        'ano' => 'required|integer|min:1900|max:' . (date('Y') + 1),
+        'ano' => 'required|integer|min:1900|max:' . (date('Y')),
         ]);
 
         try{
