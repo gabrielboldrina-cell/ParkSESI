@@ -40,7 +40,7 @@ class ColaboradorController extends Controller
             return response ()->json(['message' => 'Colaborador cadastrado com sucesso!', 'erro' => 'n'], 200);
         }
         catch(\Throwable $th){
-            return response ()->json(['message' => 'Erro ao cadastrar colaborador.', 'erro'  => $th->getMessage()], 200);
+            return response ()->json(['message' => 'Erro ao cadastrar colaborador', 'erro'  => $th->getMessage()], 200);
         }
     }
 
@@ -91,7 +91,7 @@ class ColaboradorController extends Controller
 
             return response()->json(['message' => 'Colaborador alterado com sucesso!', 'erro' => 'n'], 200);
         } catch (\Throwable $th) {
-            return response()->json(['message' => 'Erro ao alterar colaborador: ' . $th->getMessage(), 'erro' => 's'], 200);
+            return response()->json(['message' => 'Erro ao alterar colaborador!', 'erro' => 's', 'msg_erro' => $th->getMessage()], 200);
         }
     }
     
@@ -106,9 +106,10 @@ class ColaboradorController extends Controller
     
             return response()->json(['message' => 'Colaborador deletado com sucesso!', 'erro' => 'n'], 200);
         } catch (\Throwable $th) {
-            return response()->json(['message' => 'Erro ao deletar colaborador: ' . $th->getMessage(), 'erro' => 's'], 200);
+            return response()->json(['message' => 'Erro ao deletar colaborador!','erro' => 's', 'msg_erro' => $th->getMessage()], 200);
         }
     }   
-    
+
+   
 
 }

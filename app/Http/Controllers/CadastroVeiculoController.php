@@ -14,6 +14,7 @@ class CadastroVeiculoController extends Controller
     public function salvar_veiculo(Request $request){
         $request->validate([
             'placa' => 'required|string|max:7|unique:veiculos',
+            'marca' => 'required|string|max:255',
             'modelo' => 'required|string|max:255',
             'cor' => 'required|string|max:255',
             'ano' => 'required|integer|min:1900|max:' . (date('Y')),
@@ -22,6 +23,7 @@ class CadastroVeiculoController extends Controller
         try{
             $veiculo = new Veiculo();
             $veiculo->placa = $request->placa;
+            $veiculo->marca = $request->marca;
             $veiculo->modelo = $request->modelo;
             $veiculo->cor = $request->cor;
             $veiculo->ano = $request->ano;
@@ -44,8 +46,9 @@ class CadastroVeiculoController extends Controller
     public function alterar_veiculo(Request $request){
 
         $request->validate([
-        'id' => 'required|integer|exists:veiculo,id',
-        'placa' => 'required|string|max:7|unique:veiculo,placa,' . $request->id,
+        'id' => 'required|integer|exists:veiculos,id',
+        'placa' => 'required|string|max:7|unique:veiculos,placa,' . $request->id,
+        'marca' => 'required|string|max:255',
         'modelo' => 'required|string|max:255',
         'cor' => 'required|string|max:255',
         'ano' => 'required|integer|min:1900|max:' . (date('Y')),
@@ -54,6 +57,7 @@ class CadastroVeiculoController extends Controller
         try{
             $veiculo = Veiculo::find($request->id);
             $veiculo->placa = $request->placa;
+            $veiculo->marca = $request->marca;
             $veiculo->modelo = $request->modelo;
             $veiculo->cor = $request->cor;
             $veiculo->ano = $request->ano;
@@ -83,7 +87,7 @@ class CadastroVeiculoController extends Controller
     public function deletar_veiculo(Request $request)
     {
         $request->validate([
-            'id' => 'required|integer|exists:veiculo,id',
+            'id' => 'required|integer|exists:veiculos,id',
         ]);
 
         try {

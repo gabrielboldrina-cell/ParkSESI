@@ -10,20 +10,18 @@ class CarroMovimentacoesController extends Controller
     public function salvar_CarroMovimentacoes(Request $request)
     {
         $request->validate([
-            'colaborador_id' => 'required|integer',
-            'veiculo_id' => 'required|integer',
             'carro_colaborador_id' => 'required|integer',
+            'veiculo_id' => 'required|integer',
             'entrada' => 'required',
-            'saída' => 'nullable|',
+            'saida' => 'required|',
         ]);
 
         try {
             $carroMovimentacao = new Carro_movimentacoes();
-            $carroMovimentacao->colaborador_id = $request->colaborador_id;
-            $carroMovimentacao->veiculo_id = $request->veiculo_id;
             $carroMovimentacao->carro_colaborador_id = $request->carro_colaborador_id;
+            $carroMovimentacao->veiculo_id = $request->veiculo_id;
             $carroMovimentacao->entrada = $request->entrada;
-            $carroMovimentacao->saída = $request->saída;
+            $carroMovimentacao->saida = $request->saida;
 
             $carroMovimentacao->save();
 
@@ -43,20 +41,18 @@ class CarroMovimentacoesController extends Controller
     {
         $request->validate([
             'id' => 'required|integer|exists:carro_movimentacoes,id',
-            'colaborador_id' => 'required|integer',
-            'veiculo_id' => 'required|integer',
             'carro_colaborador_id' => 'required|integer',
+            'veiculos_id' => 'required|integer',
             'entrada' => 'required',
-            'saída' => 'nullable|',
+            'saida' => 'required|',
         ]);
 
         try {
             $carroMovimentacao = Carro_movimentacoes::find($request->id);
-            $carroMovimentacao->colaborador_id = $request->colaborador_id;
-            $carroMovimentacao->veiculo_id = $request->veiculo_id;
             $carroMovimentacao->carro_colaborador_id = $request->carro_colaborador_id;
+            $carroMovimentacao->veiculo_id = $request->veiculo_id;
             $carroMovimentacao->entrada = $request->entrada;
-            $carroMovimentacao->saída = $request->saída;
+            $carroMovimentacao->saida = $request->saida;
 
             $carroMovimentacao->save();
 
@@ -94,5 +90,4 @@ class CarroMovimentacoesController extends Controller
             return response()->json(['message' => 'Erro ao deletar movimentação de carro.', 'erro'  => $th->getMessage()], 200);
         }
     }
-
 }

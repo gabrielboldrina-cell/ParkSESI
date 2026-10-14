@@ -12,8 +12,8 @@ return new class extends Migration
     public function up(): void
     {
         Schema::table('carro_movimentacoes', function (Blueprint $table) {
-           $table->time('saida_para_almoco')->after('saida');
-            $table->time('volta_do_almoco')->after('saida__para_almoco');
+          // $table->time('saida_para_almoco')->after('saida');
+           // $table->time('volta_do_almoco')->after('saida__para_almoco');
         });
     }
 
@@ -23,8 +23,8 @@ return new class extends Migration
     public function down(): void
     {
         Schema::table('carro_movimentacoes', function (Blueprint $table) {
-            $table->dropColumn('saida_para_almoco');
-            $table->dropColumn('volta_do_almoco');
+          //  $table->dropColumn('saida_para_almoco');
+        //    $table->dropColumn('volta_do_almoco');
         });
     }
 };

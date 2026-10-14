@@ -15,6 +15,8 @@ return new class extends Migration
             $table->id();
             $table->unsignedBigInteger('carro_colaborador_id');
             $table->foreign('carro_colaborador_id')->references('id')->on('carro_colaborador')->onDelete('cascade');
+            $table->unsignedBigInteger('veiculo_id');
+            $table->foreign('veiculo_id')->references('id')->on('veiculos')->onDelete('cascade');
             $table->timestamp('entrada');
             $table->timestamp('saida')->nullable();
             $table->timestamps();
@@ -26,6 +28,8 @@ return new class extends Migration
        Schema::table('carro_movimentacoes', function (Blueprint $table) {
             $table->dropForeign(['carro_colaborador_id']);
             $table->dropColumn('carro_colaborador_id');
+            $table->dropForeign(['veiculo_id']);
+            $table->dropColumn('veiculo_id');
         });
 
         Schema::dropIfExists('carro_movimentacoes');

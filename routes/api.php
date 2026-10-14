@@ -27,7 +27,6 @@ Route::delete('/deletar_colaborador', [ColaboradorController::class, 'deletar_co
 Route::get('/listar_colaboradores', [ColaboradorController::class, 'listar_colaboradores'])->name('listar_colaboradores');
 Route::get('/listar_colaboradores_simples', [ColaboradorController::class, 'listar_colaboradores_simples'])->name('listar_colaboradores_simples');
 
-
 //Rotas para o CRUD de veículos
 Route::post('/salvar_veiculo', [CadastroVeiculoController::class, 'salvar_veiculo']);
 Route::put('/alterar_veiculo', [CadastroVeiculoController::class, 'alterar_veiculo']);

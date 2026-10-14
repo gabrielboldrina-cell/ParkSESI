@@ -11,13 +11,13 @@ class CarroColaboradorController extends Controller
     {
         $request->validate([
             'colaborador_id' => 'required|integer',
-            'veiculo_id' => 'required|integer',
+            'veiculos_id' => 'required|integer',
         ]);
 
         try {
             $carroColaborador = new Carro_colaborador();
             $carroColaborador->colaborador_id = $request->colaborador_id;
-            $carroColaborador->veiculo_id = $request->veiculo_id;
+            $carroColaborador->veiculos_id = $request->veiculos_id;
 
             $carroColaborador->save();
 
@@ -38,13 +38,13 @@ class CarroColaboradorController extends Controller
         $request->validate([
             'id' => 'required|integer|exists:carro_colaborador,id',
             'colaborador_id' => 'required|integer',
-            'veiculo_id' => 'required|integer',
+            'veiculos_id' => 'required|integer',
         ]);
 
         try {
             $carroColaborador = Carro_colaborador::find($request->id);
             $carroColaborador->colaborador_id = $request->colaborador_id;
-            $carroColaborador->veiculo_id = $request->veiculo_id;
+            $carroColaborador->veiculos_id = $request->veiculos_id;
 
             $carroColaborador->save();
 
