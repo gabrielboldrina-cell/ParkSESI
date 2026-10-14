@@ -5,6 +5,8 @@ use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\ColaboradorController;
 use App\Http\Controllers\UsuarioController;
 use App\Http\Controllers\CadastroVeiculoController;
+use App\Http\Controllers\CarroColaboradorController;
+use App\Http\Controllers\CarroMovimentacoesController;
 
 Route::get('/user', function (Request $request) {
     return $request->user();
@@ -32,3 +34,16 @@ Route::put('/alterar_veiculo', [CadastroVeiculoController::class, 'alterar_veicu
 Route::delete('/deletar_veiculo', [CadastroVeiculoController::class, 'deletar_veiculo']);
 Route::get('/listar_veiculos', [CadastroVeiculoController::class, 'listar_veiculos'])->name('listar_veiculos');
 Route::get('/listar_veiculos_simples', [CadastroVeiculoController::class, 'listar_veiculos_simples'])->name('listar_veiculos_simples');
+
+//Rotas para o CRUD de carros de colaboradores
+Route::post('/salvar_CarroColaborador', [CarroColaboradorController::class, 'salvar_CarroColaborador']);
+Route::put('/alterar_CarroColaborador', [CarroColaboradorController::class, 'alterar_CarroColaborador']);
+Route::delete('/deletar_CarroColaborador', [CarroColaboradorController::class, 'deletar_CarroColaborador']);
+Route::get('/listar_CarroColaborador', [CarroColaboradorController::class, 'listar_CarroColaborador'])->name('listar_CarroColaborador');    
+
+//Routas para o CRUD de movimentações de carros
+Route::post('/salvar_CarroMovimentacoes', [CarroMovimentacoesController::class, 'salvar_CarroMovimentacoes']);
+Route::put('/alterar_CarroMovimentacoes', [CarroMovimentacoesController::class, 'alterar_CarroMovimentacoes']);
+Route::delete('/deletar_CarroMovimentacoes', [CarroMovimentacoesController::class, 'deletar_CarroMovimentacoes']);
+Route::get('/listar_CarroMovimentacoes', [CarroMovimentacoesController::class, 'listar_CarroMovimentacoes'])->name('listar_CarroMovimentacoes');
+
