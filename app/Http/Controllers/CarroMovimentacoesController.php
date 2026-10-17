@@ -42,7 +42,7 @@ class CarroMovimentacoesController extends Controller
         $request->validate([
             'id' => 'required|integer|exists:carro_movimentacoes,id',
             'carro_colaborador_id' => 'required|integer',
-            'veiculos_id' => 'required|integer',
+            'veiculo_id' => 'required|integer',
             'entrada' => 'required',
             'saida' => 'required|',
         ]);

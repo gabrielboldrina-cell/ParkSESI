@@ -13,7 +13,7 @@ class CadastroVeiculoController extends Controller
 
     public function salvar_veiculo(Request $request){
         $request->validate([
-            'placa' => 'required|string|max:7|unique:veiculos',
+            'placa' => 'required|string|max:8|unique:veiculos',
             'marca' => 'required|string|max:255',
             'modelo' => 'required|string|max:255',
             'cor' => 'required|string|max:255',
@@ -47,7 +47,7 @@ class CadastroVeiculoController extends Controller
 
         $request->validate([
         'id' => 'required|integer|exists:veiculos,id',
-        'placa' => 'required|string|max:7|unique:veiculos,placa,' . $request->id,
+        'placa' => 'required|string|max:8|unique:veiculos,placa,' . $request->id,
         'marca' => 'required|string|max:255',
         'modelo' => 'required|string|max:255',
         'cor' => 'required|string|max:255',
