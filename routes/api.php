@@ -8,9 +8,6 @@ use App\Http\Controllers\CadastroVeiculoController;
 use App\Http\Controllers\CarroColaboradorController;
 use App\Http\Controllers\CarroMovimentacoesController;
 
-Route::get('/user', function (Request $request) {
-    return $request->user();
-})->middleware('auth:sanctum');
 
 //Rotas para o CRUD de usuários
 Route::post('/usuario_cadastro', [UsuarioController::class, 'salvar_usuario']);
