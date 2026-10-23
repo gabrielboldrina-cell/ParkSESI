@@ -18,7 +18,7 @@
 
 <body style="background-color: #808080;">
 
-    <nav class="navbar navbar-expand-lg bg-body-tertiary navbar bg-body-tertiary">
+    <nav class="navbar navbar-expand-lg" data-bs-theme="dark" style="background-color: #595959;">
         <div class="container-fluid ps-1">
             <a class="navbar-brand" href="#">
               <img src="Sesi-SP.jpg" alt="Bootstrap" width="100" height="34">
@@ -31,19 +31,17 @@
             <div class="collapse navbar-collapse" id="navbarSupportedContent">
                 <ul class="navbar-nav me-auto mb-2 mb-lg-0">
                     <li class="nav-item">
-                        <a class="nav-link active" aria-current="page" href="#">Home</a>
+                        <a class="nav-link active" aria-current="page" href="{{ route('Home') }}">Home</a>
                     </li>
                     <li class="nav-item">
                         <a class="nav-link" href="#">Link</a>
                     </li>
                     <li class="nav-item dropdown">
                         <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown"
-                            aria-expanded="false">
-                            Dropdown
-                        </a>
+                            aria-expanded="false">Administração</a>
                         <ul class="dropdown-menu">
-                            <li><a class="dropdown-item" href="#">Action</a></li>
-                            <li><a class="dropdown-item" href="#">Another action</a></li>
+                            <li><a class="dropdown-item" href="{{ route('PainelGeral') }}">Painel Geral</a></li>
+                            <li><a class="dropdown-item" href="{{ route('dashboard') }}">Dashboard</a></li>
                             <li>
                                 <hr class="dropdown-divider">
                             </li>
