@@ -32,7 +32,7 @@
                                 <label for="tipo" class="form-label fw-semibold small">Tipo</label>
                                 <select id="tipo" name="tipo" class="form-select form-select-lg rounded-4">
                                     <option value="administrador" selected>Administrador</option>
-                                    <option value="porteiro">Porteiro</option>
+                                    <option value="Usuario">Usuario</option>
                                 </select>
                             </div>
 
