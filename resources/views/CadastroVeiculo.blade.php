@@ -32,7 +32,8 @@
                             <div class="col-12 col-md-6">
                                 <label for="cor" class="form-label fw-semibold small">Cor</label>
                                 <input type="text" class="form-control form-control-lg rounded-4"
-                                       id="cor" name="cor" placeholder="Ex.: Prata">
+                                       id="cor" name="cor" placeholder="Ex.: Prata" 
+                                       oninput="this.value = this.value.replace(/[0-9]/g, '')">
                             </div>
 
                             <div class="col-12 col-md-6">

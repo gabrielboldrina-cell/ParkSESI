@@ -25,13 +25,15 @@
                             <div class="col-12 col-md-6">
                                 <label for="nome" class="form-label fw-semibold small">Nome completo</label>
                                 <input type="text" class="form-control form-control-lg rounded-4"
-                                       id="nome" name="nome" placeholder="Digite o nome completo">
+                                       id="nome" name="nome" placeholder="Digite o nome completo"
+                                       oninput="this.value = this.value.replace(/[0-9]/g, '')">
                             </div>
 
                             <div class="col-12 col-md-6">
                                 <label for="departamento" class="form-label fw-semibold small">Departamento</label>
                                 <input type="text" class="form-control form-control-lg rounded-4"
-                                       id="departamento" name="departamento" placeholder="Ex.: RH">
+                                       id="departamento" name="departamento" placeholder="Ex.: RH"
+                                       oninput="this.value = this.value.replace(/[0-9]/g, '')">
                             </div>
 
                             <div class="col-12 col-md-6">

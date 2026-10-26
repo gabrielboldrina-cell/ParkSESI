@@ -25,7 +25,8 @@
                             <div class="col-12 col-md-6">
                                 <label for="nome" class="form-label fw-semibold small">Nome</label>
                                 <input type="text" class="form-control form-control-lg rounded-4" id="nome"
-                                    name="nome" placeholder="Digite seu nome completo">
+                                    name="nome" placeholder="Digite seu nome completo"
+                                    oninput="this.value = this.value.replace(/[0-9]/g, '')">
                             </div>
 
                             <div class="col-12 col-md-6">
