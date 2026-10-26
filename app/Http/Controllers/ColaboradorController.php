@@ -35,7 +35,7 @@ class ColaboradorController extends Controller
             $colaborador->saida_almoco = $request->saida_almoco;
             $colaborador->volta_almoco = $request->volta_almoco;
 
-            $colaborador->save();
+            $colaborador->save();   
 
             return response ()->json(['message' => 'Colaborador cadastrado com sucesso!', 'erro' => 'n'], 200);
         }
