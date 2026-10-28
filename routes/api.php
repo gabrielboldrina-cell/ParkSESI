@@ -7,15 +7,16 @@ use App\Http\Controllers\UsuarioController;
 use App\Http\Controllers\CadastroVeiculoController;
 use App\Http\Controllers\CarroColaboradorController;
 use App\Http\Controllers\CarroMovimentacoesController;
+use App\http\Middleware\LoginApiMiddleware;
 
 
 //Rotas para o CRUD de usuários
 Route::post('/usuario_cadastro', [UsuarioController::class, 'salvar_usuario']);
-Route::put('/alterar_usuario', [UsuarioController::class, 'alterar_usuario']);
-Route::delete('/deletar_usuario', [UsuarioController::class, 'deletar_usuario']);
-Route::get('/ver_usuario', [UsuarioController::class, 'ver_usuario'])->name('ver_usuario');
-Route::get('/listar_usuarios', [UsuarioController::class, 'listar_usuarios'])->name('listar_usuarios');
-Route::get('/listar_usuarios_simples', [UsuarioController::class, 'listar_usuarios_simples'])->name('listar_usuarios_simples');
+Route::put('/alterar_usuario', [UsuarioController::class, 'alterar_usuario'])->middleware(LoginApiMiddleware::class);
+Route::delete('/deletar_usuario', [UsuarioController::class, 'deletar_usuario'])->middleware(LoginApiMiddleware::class);
+Route::get('/ver_usuario', [UsuarioController::class, 'ver_usuario'])->name('ver_usuario')->middleware(LoginApiMiddleware::class);
+Route::get('/listar_usuarios', [UsuarioController::class, 'listar_usuarios'])->name('listar_usuarios')->middleware(LoginApiMiddleware::class);
+Route::get('/listar_usuarios_simples', [UsuarioController::class, 'listar_usuarios_simples'])->name('listar_usuarios_simples')->middleware(LoginApiMiddleware::class);
 
 //Rotas para o CRUD de colaboradores
 Route::post('/salvar_colaborador', [ColaboradorController::class, 'salvar_colaborador']);
@@ -43,3 +44,5 @@ Route::put('/alterar_CarroMovimentacoes', [CarroMovimentacoesController::class, 
 Route::delete('/deletar_CarroMovimentacoes', [CarroMovimentacoesController::class, 'deletar_CarroMovimentacoes']);
 Route::get('/listar_CarroMovimentacoes', [CarroMovimentacoesController::class, 'listar_CarroMovimentacoes'])->name('listar_CarroMovimentacoes');
 
+//Rotas Login
+Route::post('/login',[UsuarioController::class,'login']);

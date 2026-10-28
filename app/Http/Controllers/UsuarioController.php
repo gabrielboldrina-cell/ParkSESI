@@ -5,6 +5,8 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use App\Models\Usuario;
 use Illuminate\Support\Facades\Hash;
+use App\Models\Usertoken;
+
 
 class UsuarioController extends Controller
 {
@@ -68,7 +70,9 @@ class UsuarioController extends Controller
             $request->validate([
                 'id' => 'required|integer|exists:usuarios,id',
                 'nome' => 'required|string|max:255',
-                'email' => 'required|string|email|max:255|',
+                'email' => 'required|string|email 
+                
+                |max:255|',
                 'senha' => 'required|string|',
                 'tipo' => 'required|string',
             ]);
@@ -110,4 +114,31 @@ class UsuarioController extends Controller
                 return response()->json(['message' => 'Erro ao deletar usuário!', 'erro' => 's', 'msg_erro' => $th->getMessage()], 200);
             }
         }
+
+        public function login(Request $request){
+            $request->validate([
+                'email' => 'required|',
+                'senha' => 'required|',
+            ]);
+
+
+            $usuario = Usuario::where('email','=', $request->email)->first();
+            if($usuario){
+                if(Hash::check($request->senha, $usuario->senha)){
+                    $user_token = new Usertoken();
+                    $user_token->usuario_id = $usuario->id;
+                    $user_token->token = Hash::make($usuario->id . $usuario->email . now());
+                    $user_token->valido_ate = now()->addDays(7);
+                    $user_token->save();
+                    return response()->json(['message' => 'Login realizado com sucesso' , 'erro' => 'n', 'token' => $user_token->token],200 );
+
+                }else{
+                return response()->json(['message' => 'Usuario ou senha não encontrado', 'erro' => 's'],200);
+            }
+
+            }else{
+                return response()->json(['message' => 'Email não encontrado', 'erro' => 's'],200);
+            }
+        }
+        
 }
