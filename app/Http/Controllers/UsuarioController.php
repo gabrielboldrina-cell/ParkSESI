@@ -70,9 +70,7 @@ class UsuarioController extends Controller
             $request->validate([
                 'id' => 'required|integer|exists:usuarios,id',
                 'nome' => 'required|string|max:255',
-                'email' => 'required|string|email 
-                
-                |max:255|',
+                'email' => 'required|string|email|max:255|',
                 'senha' => 'required|string|',
                 'tipo' => 'required|string',
             ]);
