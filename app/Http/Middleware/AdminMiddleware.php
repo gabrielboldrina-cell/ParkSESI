@@ -17,18 +17,18 @@ class AdminMiddleware
      */
     public function handle(Request $request, Closure $next): Response
     {
-        if($request->has('id') && $request->has('nivel_acesso')){
-            $admin = Admin::Where('usuario_id', $request->id)
-            ->where('nivel_acesso', $request->nivel_acesso)
+        if($request->has('token') && $request->has('usuario_id')){
+            $admin = Admin::Where('usuario_id', $request->usuario_id)
+            ->where('token', $request->token)
             ->where('valido_ate', '>', Carbon::now())
             ->first();
                 if($admin){
                     return $next($request);
                 }
-                return response()->json(['message' => 'Acesso negado', 'erro' => 's'],200 );
+                return response()->json(['message' => 'Acesso negado ou token inválido', 'erro' => 's'],200 );
 
         }else{
-            return response()->json(['message' => 'Acesso negado', 'erro' => 's'],200);
+            return response()->json(['message' => 'Token não encontrado', 'erro' => 's'],200);
          }
     }
 }

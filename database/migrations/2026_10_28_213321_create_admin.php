@@ -13,10 +13,9 @@ return new class extends Migration
     {
         Schema::create('admin', function (Blueprint $table) {
             $table->id();
-            $table->unsignedBigInteger('usuario_id');
+            $table->unsignedBigInteger('usuario_id')->unique();
             $table->foreign('usuario_id')->references('id')->on('usuarios')->onDelete('cascade');
             $table->string('nivel_acesso');
-            $table->timestamp('valido_ate');
             $table->timestamps();
         });
     }

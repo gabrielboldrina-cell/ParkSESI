@@ -14,6 +14,7 @@ class Admin extends Model
         'usuario_id',
         'nivel_acesso',
         'valido_ate',
+        'token',
     ];
 
     public function usuario()

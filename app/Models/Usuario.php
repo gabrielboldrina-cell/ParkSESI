@@ -15,4 +15,9 @@ class Usuario extends Model
         'senha',
         'tipo',
     ];
+
+    public function admin()
+    {
+        return $this->hasMany(Admin::class, 'usuario_id');
+    }
 }

@@ -8,6 +8,7 @@ use App\Http\Controllers\DashboardController;
 use App\Http\Controllers\PainelGeralController;
 use App\Http\Controllers\CadastroVeiculoController;
 use App\Http\Controllers\HomeController;
+use App\Http\Controllers\Recuperar_senhaController;
 
 Route::get('/', function () {
     return view('welcome');
@@ -19,4 +20,5 @@ Route::get('/dashboard', [DashboardController::class, 'dashboard'])->name('dashb
 Route::get('/PainelGeral', [PainelGeralController::class, 'PainelGeral'])->name('PainelGeral');
 Route::get('/CadastroVeiculo', [CadastroVeiculoController::class, 'CadastroVeiculoController'])->name('CadastroVeiculo');
 Route::get('/Home', [HomeController::class, 'Home'])->name('Home');
+Route::get('/Recuperar_senha', [Recuperar_senhaController::class, 'Recuperar_senha'])->name('Recuperar_senha');
 
