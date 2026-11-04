@@ -47,5 +47,5 @@ Route::get('/listar_CarroMovimentacoes', [CarroMovimentacoesController::class, '
 
 //Rotas Login
 Route::post('/login',[UsuarioController::class,'login']);
-Route::post('/login_admin',[UsuarioController::class,'login_admin']);
+Route::post('/logout',[UsuarioController::class,'logout']);
 

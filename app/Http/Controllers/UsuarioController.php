@@ -6,7 +6,6 @@ use Illuminate\Http\Request;
 use App\Models\Usuario;
 use Illuminate\Support\Facades\Hash;
 use App\Models\Usertoken;
-use App\Models\Admin;
 
 
 class UsuarioController extends Controller
