@@ -15,7 +15,7 @@ return new class extends Migration
             $table->id();
             $table->unsignedBigInteger('usuario_id')->unique();
             $table->foreign('usuario_id')->references('id')->on('usuarios')->onDelete('cascade');
-            $table->string('nivel_acesso');
+            $table->string('nivel_acesso');""
             $table->timestamps();
         });
     }
