@@ -13,8 +13,6 @@ class Admin extends Model
     protected $fillable = [
         'usuario_id',
         'nivel_acesso',
-        'valido_ate',
-        'token',
     ];
 
     public function usuario()

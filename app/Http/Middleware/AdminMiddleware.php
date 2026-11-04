@@ -6,6 +6,8 @@ use Closure;
 use Illuminate\Http\Request;
 use Symfony\Component\HttpFoundation\Response;
 use App\Models\Admin;
+use App\Models\Usertoken;
+use App\Models\Usuario;
 use Carbon\Carbon;
 
 class AdminMiddleware
@@ -15,20 +17,28 @@ class AdminMiddleware
      *
      * @param  Closure(Request): (Response)  $next
      */
-    public function handle(Request $request, Closure $next): Response
-    {
-        if($request->has('token') && $request->has('usuario_id')){
-            $admin = Admin::Where('usuario_id', $request->usuario_id)
+        public function handle(Request $request, Closure $next): Response
+        {
+            if($request->has('token') && $request->has('usuario_id')){
+            $token = Usertoken::Where('usuario_id', $request->usuario_id)
             ->where('token', $request->token)
             ->where('valido_ate', '>', Carbon::now())
             ->first();
-                if($admin){
+                if($token){
+
+                    $admin = Admin::where('usuario_id','=', $request->usuario_id)->first();
+                    if($admin){
                     return $next($request);
+                    }else{
+                        return response()->json(['message' => 'Usuario não é admin', 'erro' => 's'],200);
+                    }
                 }
-                return response()->json(['message' => 'Acesso negado ou token inválido', 'erro' => 's'],200 );
+                return response()->json(['message' => 'Token invalido ou expirado', 'erro' => 's'],200 );
 
         }else{
-            return response()->json(['message' => 'Token não encontrado', 'erro' => 's'],200);
+            return response()->json(['message' => 'Token não fornecido', 'erro' => 's'],200);
          }
+
+           
+        }
     }
-}
