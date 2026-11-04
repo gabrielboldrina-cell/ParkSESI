@@ -13,15 +13,15 @@ use App\http\Middleware\AdminMiddleware;
 
 //Rotas para o CRUD de usuários
 Route::post('/usuario_cadastro', [UsuarioController::class, 'salvar_usuario']);
-Route::put('/alterar_usuario', [UsuarioController::class, 'alterar_usuario'])->middleware(LoginApiMiddleware::class);
-Route::delete('/deletar_usuario', [UsuarioController::class, 'deletar_usuario'])->middleware(LoginApiMiddleware::class);
-Route::get('/ver_usuario', [UsuarioController::class, 'ver_usuario'])->name('ver_usuario')->middleware(LoginApiMiddleware::class);
-Route::get('/listar_usuarios', [UsuarioController::class, 'listar_usuarios'])->name('listar_usuarios')->middleware(LoginApiMiddleware::class);
-Route::get('/listar_usuarios_simples', [UsuarioController::class, 'listar_usuarios_simples'])->name('listar_usuarios_simples')->middleware(LoginApiMiddleware::class);
+Route::put('/alterar_usuario', [UsuarioController::class, 'alterar_usuario'])->middleware(AdminMiddleware::class);
+Route::delete('/deletar_usuario', [UsuarioController::class, 'deletar_usuario'])->middleware(AdminMiddleware::class);
+Route::get('/ver_usuario', [UsuarioController::class, 'ver_usuario'])->name('ver_usuario')->middleware(AdminMiddleware::class);
+Route::get('/listar_usuarios', [UsuarioController::class, 'listar_usuarios'])->name('listar_usuarios')->middleware(AdminMiddleware::class);
+Route::get('/listar_usuarios_simples', [UsuarioController::class, 'listar_usuarios_simples'])->name('listar_usuarios_simples')->middleware(AdminMiddleware::class);
 
 //Rotas para o CRUD de colaboradores
 Route::post('/salvar_colaborador', [ColaboradorController::class, 'salvar_colaborador']);
-Route::put('/alterar_colaborador', [ColaboradorController::class, 'alterar_colaborador']);
+Route::put('/alterar_colaborador', [ColaboradorController::class, 'alterar_colaborador'])->middleware(AdminMiddleware::class);
 Route::delete('/deletar_colaborador', [ColaboradorController::class, 'deletar_colaborador'])->middleware(AdminMiddleware::class);
 Route::get('/listar_colaboradores', [ColaboradorController::class, 'listar_colaboradores'])->name('listar_colaboradores')->middleware(AdminMiddleware::class);
 Route::get('/listar_colaboradores_simples', [ColaboradorController::class, 'listar_colaboradores_simples'])->name('listar_colaboradores_simples')->middleware(AdminMiddleware::class);
@@ -47,4 +47,5 @@ Route::get('/listar_CarroMovimentacoes', [CarroMovimentacoesController::class, '
 
 //Rotas Login
 Route::post('/login',[UsuarioController::class,'login']);
+Route::post('/login_admin',[UsuarioController::class,'login_admin']);
 

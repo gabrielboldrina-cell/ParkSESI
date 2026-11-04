@@ -140,6 +140,22 @@ class UsuarioController extends Controller
             }
         }
 
+        public function logout(Request $request){
+            $request->validate([
+                'usuario_id' => 'required|integer|exists:usuarios,id',
+                'token' => 'required|string',
+            ]);
+    $token = Usertoken::where('usuario_id', $request->usuario_id)
+        ->where('token', $request->token)
+        ->first();
+
+    if ($token) {$token->delete();
+
+        return response()->json(['message' => 'Logout realizado com sucesso','erro' => 'n'], 200);
+
+    }return response()->json(['message' => 'Token não encontrado','erro' => 's'], 200);
+}
+
    
 
         

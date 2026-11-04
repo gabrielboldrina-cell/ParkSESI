@@ -29,8 +29,6 @@ class AdminMiddleware
                     $admin = Admin::where('usuario_id','=', $request->usuario_id)->first();
                     if($admin){
                     return $next($request);
-                    }else{
-                        return response()->json(['message' => 'Usuario não é admin', 'erro' => 's'],200);
                     }
                 }
                 return response()->json(['message' => 'Token invalido ou expirado', 'erro' => 's'],200 );
