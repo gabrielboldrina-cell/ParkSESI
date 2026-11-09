@@ -36,7 +36,7 @@
                         aria-describedby="senhaHelp">
                 </div>
 
-                <button type="button" class="btn-subtle theme-accent">Entrar</button>
+                <button type="button" class="btn-subtle theme-accent" id="entrar" >Entrar</button>
 
             </div>
         </div>

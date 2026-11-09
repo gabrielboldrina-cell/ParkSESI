@@ -7,7 +7,6 @@ use App\Http\Controllers\UsuarioController;
 use App\Http\Controllers\CadastroVeiculoController;
 use App\Http\Controllers\CarroColaboradorController;
 use App\Http\Controllers\CarroMovimentacoesController;
-use App\http\Middleware\LoginApiMiddleware;
 use App\http\Middleware\AdminMiddleware;
 
 
