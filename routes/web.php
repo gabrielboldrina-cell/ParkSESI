@@ -22,5 +22,5 @@ Route::get('/PainelGeral', [PainelGeralController::class, 'PainelGeral'])->name(
 Route::get('/CadastroVeiculo', [CadastroVeiculoController::class, 'CadastroVeiculoController'])->name('CadastroVeiculo');
 Route::get('/Home', [HomeController::class, 'Home'])->name('Home');
 Route::get('/Recuperar_senha', [Recuperar_senhaController::class, 'Recuperar_senha'])->name('Recuperar_senha');
-Route::get('/login', [loginController::class, 'login'])->name('login');
+Route::get('/login_teste', [loginController::class, 'login_teste'])->name('login_teste');
 

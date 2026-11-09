@@ -15,24 +15,35 @@
         integrity="sha256-/JqT3SQfawRcv/BIHPThkBvs0OEvtFFmqPF/lYI/Cxo=" crossorigin="anonymous"></script>
     <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-cookie/1.4.1/jquery.cookie.min.js" integrity="sha512-3j3VU6WC5rPQB4Ld1jnLV7Kd5xr+cq9avvhwqzbH/taCRNURoeEpoPBK9pDyeukwSxwRPJ8fDgvYXd6SkaZ2TA==
-             " crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+     " crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+     @vite ('resources/js/login.js')
 </head>
 
 <body>
-    <div class="container">
-        <h3 class="mt-3 text-center">Login</h3>
-            <div class="mb-3">
-                <label for="exampleInputEmail1" class="form-label">Email</label>
-            <input type="email" class="form-control form-control-sm" id="Email" aria-describedby="emailHelp">
-                <div id="emailHelp" class="form-text">Informe o seu email</div>
-            </div>
-            <div class="mb-3">
-                <label for="exampleInputPassword1" class="form-label">Senha</label>
-                <input type="password" class="form-control form-control-sm" id="Senha" aria-describedby="senhaHelp">
-            </div>
-            <button type="submit" class="btn-solid theme-primary">Entrar</button>
-    </div>
+    <div class="container fg-black">
+        <div class="row justify-content-center">
+            <div class="col-6 rounded border p-3 shadow-sm bg-inverse mt-2">
+                <h3 class="mt-3 text-center fg-black">Login</h3>
+                <div class="mb-3">
+                    <label for="email" class="form-label fg-black">Email </label>
+                    <input type="email" class="form-control form-control-sm" id="email"
+                        aria-describedby="emailHelp">
+                    <div id="emailHelp" class="form-text">Informe seu email cadastrado.</div>
+                </div>
+                <div class="mb-3">
+                    <label for="senha" class="form-label fg-black">Senha</label>
+                    <input type="password" class="form-control form-control-sm" id="senha"
+                        aria-describedby="senhaHelp">
+                </div>
 
+                <button type="button" class="btn-subtle theme-accent">Entrar</button>
+
+            </div>
+        </div>
+
+
+
+    </div>
 
 </body>
 
