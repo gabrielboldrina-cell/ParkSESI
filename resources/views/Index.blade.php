@@ -2,6 +2,7 @@
 @section('title', 'Controle de Entrada e Saída')
 
 @section('content')
+@vite('resources/js/Index.js')
 
     <div class="mt-4 mb-4">
         <h2 class="fw-bold mb-0">Controle de Entrada e Saída</h2>
@@ -119,5 +120,11 @@
             </table>
         </div>
     </div>
+      @if($admin == 'S')
+            <a href="{{ route('PainelGeral') }}" class="btn btn-primary">Acessar Painel</a>
+             
+        @else
+       <p class="text-center">Você não tem acesso ao painel admin.</p>
+        @endif
 
 @endsection

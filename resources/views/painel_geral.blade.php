@@ -2,6 +2,8 @@
 @section('title', 'Painel Geral Administrativo')
 
 @section('content')
+    
+
 
     {{-- 1. TÍTULO --}}
     <div class="mt-4 mb-4">

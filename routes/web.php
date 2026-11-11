@@ -18,13 +18,13 @@ use App\Http\Controllers\AdminController;
 Route::get('/', function () {
     return view('welcome');
 });
-Route::get('/CadastroColaborador', [ColaboradorController::class, 'CadastroController'])->name('CadastroColaborador');
+Route::get('/CadastroColaborador', [ColaboradorController::class, 'CadastroController'])->middleware(AdminLogadoMiddleware::class)->name('CadastroColaborador');
 Route::get('/CadastroUsuario', [UsuarioController::class, 'CadastroController'])->name('CadastroUsuario');
-Route::get('/Index', [IndexController::class, 'Index'])->name('Index');
-Route::get('/dashboard', [DashboardController::class, 'dashboard'])->name('dashboard');
-Route::get('/PainelGeral', [PainelGeralController::class, 'PainelGeral'])->name('PainelGeral');
-Route::get('/CadastroVeiculo', [CadastroVeiculoController::class, 'CadastroVeiculoController'])->name('CadastroVeiculo');
-Route::get('/Home', [HomeController::class, 'Home'])->name('Home');
+Route::get('/Index', [IndexController::class, 'Index'])->middleware(LogadoMiddleware::class)->name('Index');
+Route::get('/dashboard', [DashboardController::class, 'dashboard'])->middleware(AdminLogadoMiddleware::class)->name('dashboard');
+Route::get('/PainelGeral', [PainelGeralController::class, 'PainelGeral'])->middleware(AdminLogadoMiddleware::class)->name('PainelGeral');
+Route::get('/CadastroVeiculo', [CadastroVeiculoController::class, 'CadastroVeiculoController'])->middleware(AdminLogadoMiddleware::class)->name('CadastroVeiculo');
+Route::get('/Home', [HomeController::class, 'Home'])->name('Home')->middleware(AdminLogadoMiddleware::class);
 Route::get('/Recuperar_senha', [Recuperar_senhaController::class, 'Recuperar_senha'])->name('Recuperar_senha');
 
 //testes 

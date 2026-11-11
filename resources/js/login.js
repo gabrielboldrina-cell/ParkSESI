@@ -37,7 +37,7 @@ $(document).ready(function() {
                     $.cookie('token', response.token, { expires: 7,});  
                     $.cookie('usuario_id', response.usuario_id, { expires: 7,});
                     setTimeout(function() {
-                        window.location.href = '../Hometeste';
+                        window.location.href = '../dashboard'
                     }, 3000);
                 } else {
                     Swal.fire({

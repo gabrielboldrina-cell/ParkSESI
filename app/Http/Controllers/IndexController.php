@@ -7,6 +7,8 @@ use Illuminate\Http\Request;
 class IndexController extends Controller
 {
     public function Index(Request $request){
-        return view('Index');
+        $usuario = $request->usuario;
+            $admin = $request->admin;
+        return view('Index')->with('usuario', $usuario)->with('admin', $admin);
     }
 }
