@@ -3,13 +3,11 @@
 
 @section('content')
 
-    {{-- 2. TÍTULO --}}
     <div class="mt-4 mb-4">
         <h2 class="fw-bold mb-0">Controle de Entrada e Saída</h2>
         <small>Portaria Principal</small>
     </div>
 
-    {{-- 3. INDICADORES (por enquanto com números fixos) --}}
     <div class="row g-3 mb-4">
         <div class="col-12 col-md-4">
             <div class="card shadow-sm rounded-4 h-100">

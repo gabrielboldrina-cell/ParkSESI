@@ -153,7 +153,7 @@ class UsuarioController extends Controller
         return response()->json(['message' => 'Logout realizado com sucesso','erro' => 'n'], 200);
 
     }return response()->json(['message' => 'Token não encontrado','erro' => 's'], 200);
-}
+    }
 
    
 

@@ -9,7 +9,6 @@ use App\Http\Controllers\CarroColaboradorController;
 use App\Http\Controllers\CarroMovimentacoesController;
 use App\http\Middleware\AdminMiddleware;
 
-
 //Rotas para o CRUD de usuários
 Route::post('/usuario_cadastro', [UsuarioController::class, 'salvar_usuario']);
 Route::put('/alterar_usuario', [UsuarioController::class, 'alterar_usuario'])->middleware(AdminMiddleware::class);
