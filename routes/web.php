@@ -10,6 +10,8 @@ use App\Http\Controllers\CadastroVeiculoController;
 use App\Http\Controllers\HomeController;
 use App\Http\Controllers\Recuperar_senhaController;
 use App\Http\Controllers\loginController;
+use App\Http\Controllers\Hometeste;
+use App\Http\Middleware\LogadoMiddleware;
 
 Route::get('/', function () {
     return view('welcome');
@@ -22,5 +24,8 @@ Route::get('/PainelGeral', [PainelGeralController::class, 'PainelGeral'])->name(
 Route::get('/CadastroVeiculo', [CadastroVeiculoController::class, 'CadastroVeiculoController'])->name('CadastroVeiculo');
 Route::get('/Home', [HomeController::class, 'Home'])->name('Home');
 Route::get('/Recuperar_senha', [Recuperar_senhaController::class, 'Recuperar_senha'])->name('Recuperar_senha');
+
+//testes 
 Route::get('/login_teste', [loginController::class, 'login_teste'])->name('login_teste');
+Route::get('/Hometeste', [HomeController::class, 'home_teste'])->middleware(LogadoMiddleware::class)->name('Hometeste');
 
