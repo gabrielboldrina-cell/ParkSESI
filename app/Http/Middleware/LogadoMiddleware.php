@@ -9,6 +9,7 @@ use App\Models\Usertoken;
 use App\Models\Usuario;
 use Illuminate\Support\Facades\Cookie;
 use Carbon\Carbon;
+use App\Models\Admin;
 
 class LogadoMiddleware
 {
@@ -29,6 +30,12 @@ class LogadoMiddleware
                 if ($token_usuario){
                     $usuario = Usuario::find($usuario_id);
                     $request->usuario = $usuario;
+                    $admin = Admin::where('usuario_id','=', $usuario_id)->first();
+                    if($admin){
+                        $request->admin = 'S';
+                    }else{
+                        $request->admin = 'N';
+                    }
                     return $next($request);
                 } else{
                     Cookie::forget('usuario_id');

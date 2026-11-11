@@ -12,6 +12,8 @@ use App\Http\Controllers\Recuperar_senhaController;
 use App\Http\Controllers\loginController;
 use App\Http\Controllers\Hometeste;
 use App\Http\Middleware\LogadoMiddleware;
+use App\Http\Middleware\AdminLogadoMiddleware;
+use App\Http\Controllers\AdminController;
 
 Route::get('/', function () {
     return view('welcome');
@@ -29,3 +31,4 @@ Route::get('/Recuperar_senha', [Recuperar_senhaController::class, 'Recuperar_sen
 Route::get('/login_teste', [loginController::class, 'login_teste'])->name('login_teste');
 Route::get('/Hometeste', [HomeController::class, 'home_teste'])->middleware(LogadoMiddleware::class)->name('Hometeste');
 
+Route::get('/painel_teste', [AdminController::class, 'PainelGeral'])->middleware(AdminLogadoMiddleware::class)->name('PainelGeral');
