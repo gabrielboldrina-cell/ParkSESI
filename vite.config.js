@@ -9,7 +9,10 @@ export default defineConfig({
             input: ['resources/css/app.css',
                  'resources/js/app.js', 
                  'resources/js/login.js',
-                 'resources/js/Index.js'
+                 'resources/js/Index.js',
+                 'resources/js/CadastroUsuario.js',
+                 'resources/css/CadastroUsuario.css',
+                 'resources/css/CadastroColaborador.css'
                  
                 ],
             refresh: true,

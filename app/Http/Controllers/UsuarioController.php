@@ -10,10 +10,7 @@ use App\Models\Usertoken;
 
 class UsuarioController extends Controller
 {
-    public function CadastroController(Request $request)
-    {
-        return view('CadastroUsuario');
-    }
+    
 
         public function salvar_usuario(Request $request)
         {

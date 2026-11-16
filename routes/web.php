@@ -16,11 +16,12 @@ use App\Http\Middleware\AdminLogadoMiddleware;
 use App\Http\Controllers\AdminController;
 use App\Http\Controllers\sem_acesso_testeController;
 use App\Http\Controllers\configController;
+use App\Http\Controllers\CadastroUsuarioController;
 Route::get('/', function () {
     return view('welcome');
 });
 Route::get('/CadastroColaborador', [ColaboradorController::class, 'CadastroController'])->middleware(AdminLogadoMiddleware::class)->name('CadastroColaborador');
-Route::get('/CadastroUsuario', [UsuarioController::class, 'CadastroController'])->name('CadastroUsuario');
+Route::get('/CadastroUsuario', [CadastroUsuarioController::class, 'CadastroController'])->name('CadastroUsuario');
 Route::get('/Index', [IndexController::class, 'Index'])->middleware(LogadoMiddleware::class)->name('Index');
 Route::get('/dashboard', [DashboardController::class, 'dashboard'])->middleware(AdminLogadoMiddleware::class)->name('dashboard');
 Route::get('/PainelGeral', [PainelGeralController::class, 'PainelGeral'])->middleware(AdminLogadoMiddleware::class)->name('PainelGeral');
@@ -34,3 +35,4 @@ Route::get('/Login', [loginController::class, 'Login'])->name('Login');
 Route::get('/Hometeste', [HomeController::class, 'home_teste'])->middleware(LogadoMiddleware::class)->name('Hometeste');
 Route::get('/sem_acesso_teste', [sem_acesso_testeController::class, 'sem_acesso_teste'])->name('sem_acesso_teste');
 Route::get('/painel_teste', [AdminController::class, 'PainelGeral'])->middleware(AdminLogadoMiddleware::class)->name('PainelGeral');
+Route::get('/cadastrar_usuario',[CadastroUsuarioController::class, 'cadastrar_usuario'])->name('cadastrar_usuario');

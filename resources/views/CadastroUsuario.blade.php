@@ -3,7 +3,7 @@
 
 
 @section('content')
-    <link rel="stylesheet" href="{{ asset('CadastroUsuario.css') }}">
+   @vite(''resources/css/CadastroUsuario.css',')
 
     <div class="container py-5">
         <div class="row justify-content-center">

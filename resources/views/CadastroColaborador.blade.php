@@ -2,7 +2,8 @@
 @section('title', 'Cadastro de Colaborador')
 
 @section('content')
-<link rel="stylesheet" href="{{ asset('CadastroColaborador.css') }}">
+
+@vite('resources/css/CadastroColaborador.css')
 
 
     <div class="container py-5">
