@@ -10,7 +10,7 @@ export default defineConfig({
                  'resources/js/app.js', 
                  'resources/js/login.js',
                  'resources/js/Index.js',
-                 'resources/js/CadastroUsuario.js',
+                 'resources/js/cadastroUsuario.js',
                  'resources/css/CadastroUsuario.css',
                  'resources/css/CadastroColaborador.css'
                  

@@ -17,6 +17,7 @@ use App\Http\Controllers\AdminController;
 use App\Http\Controllers\sem_acesso_testeController;
 use App\Http\Controllers\configController;
 use App\Http\Controllers\CadastroUsuarioController;
+
 Route::get('/', function () {
     return view('welcome');
 });
@@ -35,4 +36,4 @@ Route::get('/Login', [loginController::class, 'Login'])->name('Login');
 Route::get('/Hometeste', [HomeController::class, 'home_teste'])->middleware(LogadoMiddleware::class)->name('Hometeste');
 Route::get('/sem_acesso_teste', [sem_acesso_testeController::class, 'sem_acesso_teste'])->name('sem_acesso_teste');
 Route::get('/painel_teste', [AdminController::class, 'PainelGeral'])->middleware(AdminLogadoMiddleware::class)->name('PainelGeral');
-Route::get('/cadastrar_usuario',[CadastroUsuarioController::class, 'cadastrar_usuario'])->name('cadastrar_usuario');
+Route::get('/cadastrar_usuario',[CadastroUsuarioController::class, 'cadastrar_usuario'])->middleware(AdminLogadoMiddleware::class)->name('cadastrar_usuario');

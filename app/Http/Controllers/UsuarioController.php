@@ -152,6 +152,11 @@ class UsuarioController extends Controller
     }return response()->json(['message' => 'Token não encontrado','erro' => 's'], 200);
     }
 
+    public function cadastrar_usuario_html(Request $request){
+        
+        $usuarios = Usuario::all();
+        return view('CadastroUsuario_teste')->with('usuarios', $usuarios);
+    }
    
 
         
