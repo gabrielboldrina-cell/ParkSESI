@@ -3,15 +3,12 @@
 
 @section('content')
     
-
-
-    {{-- 1. TÍTULO --}}
     <div class="mt-4 mb-4">
         <h2 class="fw-bold mb-0">Painel Geral Administrativo</h2>
         <small>Análise de dados, fluxo de veículos e relatórios de portaria</small>
     </div>
 
-    {{-- 2. MOVIMENTAÇÃO POR COLABORADOR --}}
+
     <div class="card shadow-sm rounded-4 mb-4">
         <div class="card-body p-4">
             <h5 class="fw-bold mb-3">Movimentação por colaborador</h5>
@@ -22,7 +19,7 @@
                            placeholder="Pesquisar colaborador ou placa..." aria-label="Pesquisar">
                 </div>
 
-                {{-- Filtros por categoria (ainda não filtram nada) --}}
+            
                 <div class="col-12 col-md-7 d-flex flex-wrap justify-content-md-end gap-2">
                     <button type="button" class="btn btn-danger btn-sm rounded-pill px-3">Todos</button>
                     <button type="button" class="btn btn-outline-secondary btn-sm rounded-pill px-3">Docentes</button>
@@ -132,16 +129,15 @@
         </div>
     </div>
 
-    {{-- 3. AÇÕES DO ADMIN: colaborador e usuário --}}
     <div class="row g-4 mb-5">
 
-        {{-- Colaboradores --}}
+        
         <div class="col-12 col-md-6">
             <div class="card shadow-sm rounded-4 h-100">
                 <div class="card-body p-4">
                     <h6 class="fw-bold mb-3">Colaboradores</h6>
                     <div class="d-flex flex-wrap gap-2">
-                        {{-- Adicionar leva para a tela de cadastro: por isso é um link (<a>) --}}
+                       
                         <a href="#" class="btn btn-success fw-semibold">Adicionar colaborador</a>
                         <button type="button" class="btn btn-primary fw-semibold">Atualizar dados</button>
                         <button type="button" class="btn btn-danger fw-semibold">Excluir</button>
@@ -150,7 +146,7 @@
             </div>
         </div>
 
-        {{-- Usuários (porteiro e admin) --}}
+
         <div class="col-12 col-md-6">
             <div class="card shadow-sm rounded-4 h-100">
                 <div class="card-body p-4">

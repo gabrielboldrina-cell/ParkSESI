@@ -120,8 +120,8 @@
             </table>
         </div>
     </div>
-      @if($admin == 'S')
+     
             <a href="{{ route('PainelGeral') }}" class="btn btn-primary">Acessar Painel</a>
-        @endif
+      
 
 @endsection
