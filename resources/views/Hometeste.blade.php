@@ -20,12 +20,7 @@
 </head>
 <body>
     <div class="container">
-        <h3 class="text-center"> Bem vindo, {{ $usuario->nome }}</h3>
-        @if($admin == 'S')
-            <a class="btn btn-primary">Acessar Painel</a>
-        @else
         <p class="text-center">Você não tem acesso ao painel admin.</p>
-        @endif
     </div>
 
 </body>
