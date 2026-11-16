@@ -1,10 +1,11 @@
 @extends('layouts.login')
-@section('title', 'Cadastro de Usuario')
+@section('title', 'Loginde Usuario')
 
 
 @section('content')
+
 @vite ('resources/js/login.js')
-@vite ('resources/js/Index.js')
+
     
 <div class="container fg-black">
         <div class="row justify-content-center">

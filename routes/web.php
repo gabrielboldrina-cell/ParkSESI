@@ -15,7 +15,7 @@ use App\Http\Middleware\LogadoMiddleware;
 use App\Http\Middleware\AdminLogadoMiddleware;
 use App\Http\Controllers\AdminController;
 use App\Http\Controllers\sem_acesso_testeController;
-
+use App\Http\Controllers\configController;
 Route::get('/', function () {
     return view('welcome');
 });
@@ -27,9 +27,10 @@ Route::get('/PainelGeral', [PainelGeralController::class, 'PainelGeral'])->middl
 Route::get('/CadastroVeiculo', [CadastroVeiculoController::class, 'CadastroVeiculoController'])->middleware(AdminLogadoMiddleware::class)->name('CadastroVeiculo');
 Route::get('/Home', [HomeController::class, 'Home'])->name('Home')->middleware(AdminLogadoMiddleware::class);
 Route::get('/Recuperar_senha', [Recuperar_senhaController::class, 'Recuperar_senha'])->name('Recuperar_senha');
+Route::get('config', [configController::class, 'configuracoes'])->name('config');
 
 //testes 
-Route::get('/login_teste', [loginController::class, 'login_teste'])->name('login_teste');
+Route::get('/Login', [loginController::class, 'Login'])->name('Login');
 Route::get('/Hometeste', [HomeController::class, 'home_teste'])->middleware(LogadoMiddleware::class)->name('Hometeste');
 Route::get('/sem_acesso_teste', [sem_acesso_testeController::class, 'sem_acesso_teste'])->name('sem_acesso_teste');
 Route::get('/painel_teste', [AdminController::class, 'PainelGeral'])->middleware(AdminLogadoMiddleware::class)->name('PainelGeral');
