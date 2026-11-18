@@ -11,7 +11,7 @@ use App\http\Middleware\AdminMiddleware;
 use App\Http\Middleware\AdminLogadoMiddleware;
 
 //Rotas para o CRUD de usuários
-Route::post('/usuario_cadastro', [UsuarioController::class, 'salvar_usuario']);
+Route::post('/usuario_cadastro', [UsuarioController::class, 'salvar_usuario'])->middleware(AdminLogadoMiddleware::class);
 Route::put('/alterar_usuario', [UsuarioController::class, 'alterar_usuario'])->middleware(AdminLogadoMiddleware::class);
 Route::delete('/deletar_usuario', [UsuarioController::class, 'deletar_usuario'])->middleware(AdminLogadoMiddleware::class);
 Route::get('/ver_usuario', [UsuarioController::class, 'ver_usuario'])->middleware(AdminLogadoMiddleware::class)->name('ver_usuario');

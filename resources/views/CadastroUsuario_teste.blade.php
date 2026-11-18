@@ -1,5 +1,6 @@
 @extends('layouts.principal')
 @section('title', 'Cadastrar Usuario')
+@vite('resources/js/cadastroUsuario.js')
 
 @section('content')
     <h3 class="text-center">Cadastro de Usuario</h3>
@@ -22,16 +23,16 @@
                 <input type="text" class="form-control form-control-sm" id="tipo">
             </div>
             <div class="mb-3 col-6">
-                <label for="tipo" class="form-label">Usuario</label>
+                 <label for="tipo" class="form-label">Usuario</label>
                 <select class="form-select  form-select-sm" id="usuario">
-                @foreach($usuarios as $u)
-                    <option value="{{ $u['id'] }}">{{ $u['nome'] }}</option>
-                @endforeach
+                    @foreach ($usuarios as $u)
+                        <option value="{{ $u['id'] }}">{{ $u['nome'] }}</option>
+                    @endforeach
                 </select>
+            
+            </div>
 
-                </div>
-
-                <button type="button" id="cadastrar" class="btn btn-primary btn-sm mt-2">Cadastrar </button>  
+            <button type="button" id="cadastrar" class="btn btn-primary btn-sm mt-2">Cadastrar </button>
         </div>
     </div>
 
