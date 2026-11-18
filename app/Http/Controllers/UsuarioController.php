@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\Colaborador;
 use Illuminate\Http\Request;
 use App\Models\Usuario;
 use Illuminate\Support\Facades\Hash;
@@ -24,6 +25,7 @@ class UsuarioController extends Controller
 
             try {
                 $usuario = new Usuario();
+                $usuario->usuario_id = $request->usuario_id_cadastrar;
                 $usuario->nome = $request->nome;
                 $usuario->email = $request->email;
                 $usuario->senha = Hash::make($request->senha);
@@ -71,6 +73,7 @@ class UsuarioController extends Controller
                 'email' => 'required|string|email|max:255|',
                 'senha' => 'required|string|',
                 'tipo' => 'required|string',
+                'usuario_id_cadastrar' => 'requeired|string',
             ]);
 
             try {
@@ -87,6 +90,7 @@ class UsuarioController extends Controller
                 $usuario->email = $request->email;
                 $usuario->senha = Hash::make($request->senha);
                 $usuario->tipo = $request->tipo;
+                
 
                 $usuario->save();
 
@@ -157,6 +161,16 @@ class UsuarioController extends Controller
         
         $usuarios = Usuario::all();
         return view('CadastroUsuario_teste')->with('usuarios', $usuarios);
+    }
+
+    public function tabela_html(Request $request){
+
+    $dados = Colaborador::select('colaborador.nome', 'colaborador.email', 'colaborador.departamento', 'colaborador.situacao', 
+    'colaborador.saida_almoco','colaborador.volta_almoco', 'veiculos.placa', 'veiculos.marca', 'veiculos.modelo', 'veiculos.cor',
+    'veiculos.ano','carro_colaborador.colaborador_id', 'carro_colaborador.veiculos_id')
+    ->join('carro_colaborador', 'carro_colaborador.colaborador_id','=', 'colaborador.id')
+    ->join('veiculos', 'carro_colaborador.veiculos_id', '=', 'veiculos.id')->get();
+        return view('tabela_teste')->with('dados', $dados);
     }
    
 

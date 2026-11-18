@@ -10,7 +10,8 @@ $(document).ready(function(){
             });
             return false;
         }
-        let usuario_id = $.cookie('usuario_id_cadastrar')
+        let usuario_id = $.cookie('usuario_id');
+        let token = $.cookie('token');
 
         $.ajax({
             type: "POST",
@@ -20,7 +21,9 @@ $(document).ready(function(){
                 email: $("#email").val(),
                 senha: $("#senha").val(),
                 tipo: $("#tipo").val(),
-                usuario_id_cadastrar: $('#usuario_id_cadastrar')
+                usuario_id_cadastrar: $('#usuario_id').val(),
+                usuario_id: usuario_id,
+                token: token,
             },
             success: function (response) {
                 if(response.erro == 'n'){

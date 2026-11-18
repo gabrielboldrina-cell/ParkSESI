@@ -11,6 +11,7 @@ use Illuminate\Support\Facades\Cookie;
 use Carbon\Carbon;
 use App\Models\Admin;
 use App\Http\Controllers\sem_acesso_testeController;
+use App\Http\Controllers\UsuarioController;
 
 class AdminLogadoMiddleware
 {
@@ -43,14 +44,14 @@ class AdminLogadoMiddleware
                 } else{
                     Cookie::forget('usuario_id');
                     Cookie::forget('token');
-                    return redirect()->route('login_teste');
+                    return redirect()->route('Login');
                 }
         
     } else {
         Cookie::forget('usuario_id');
         Cookie::forget('token');
         
-        return redirect()->route('login_teste');
+        return redirect()->route('Login');
     }
     }
 }
