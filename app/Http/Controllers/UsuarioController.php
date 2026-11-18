@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\Carro_colaborador;
 use App\Models\Colaborador;
 use Illuminate\Http\Request;
 use App\Models\Usuario;
@@ -165,11 +166,16 @@ class UsuarioController extends Controller
 
     public function tabela_html(Request $request){
 
-    $dados = Colaborador::select('colaborador.nome', 'colaborador.email', 'colaborador.departamento', 'colaborador.situacao', 
-    'colaborador.saida_almoco','colaborador.volta_almoco', 'veiculos.placa', 'veiculos.marca', 'veiculos.modelo', 'veiculos.cor',
-    'veiculos.ano','carro_colaborador.colaborador_id', 'carro_colaborador.veiculos_id')
-    ->join('carro_colaborador', 'carro_colaborador.colaborador_id','=', 'colaborador.id')
-    ->join('veiculos', 'carro_colaborador.veiculos_id', '=', 'veiculos.id')->get();
+    $dados = Carro_colaborador::select('colaborador.nome', 'colaborador.email',
+     'colaborador.departamento', 'colaborador.situacao', 
+    'colaborador.saida_almoco','colaborador.volta_almoco', 
+    'veiculos.placa', 'veiculos.marca', 'veiculos.modelo', 'veiculos.cor',
+    'veiculos.ano','carro_colaborador.colaborador_id', 
+    'carro_colaborador.veiculos_id')
+    ->leftjoin('colaborador',
+     'carro_colaborador.colaborador_id','=', 'colaborador.id')
+    ->leftjoin('veiculos', 
+    'carro_colaborador.veiculos_id', '=', 'veiculos.id')->get();
         return view('tabela_teste')->with('dados', $dados);
     }
    
