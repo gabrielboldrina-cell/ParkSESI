@@ -17,6 +17,7 @@ return new class extends Migration
             $table->string('email')->unique();
             $table->string('senha');
             $table->string('tipo');
+            $table->string('imagem');
             
         });
     }

@@ -22,17 +22,13 @@ class ColaboradorController extends Controller
             'situacao' => 'required|string|',
             'saida_almoco' => '|string|max:255',
             'volta_almoco' => '|string|max:255',
-            'imagem' => 'nullable|image|max:10000000000'
+            
         ]);
 
         try{
             $colaborador = new Colaborador();
 
-            if ($request->hasFile('imagem')){
-                $imagem = $request->file('imagem');
-                $caminho = $imagem->store('imagens', 'public');
-                $colaborador->imagem = $caminho;
-            }
+            
             $colaborador->nome = $request->nome;
             $colaborador->nif = $request->nif;
             $colaborador->email = $request->email;

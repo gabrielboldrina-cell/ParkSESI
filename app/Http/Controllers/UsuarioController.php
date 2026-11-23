@@ -21,13 +21,18 @@ class UsuarioController extends Controller
                 'email' => 'required|string|email|max:255|unique:usuarios',
                 'senha' => 'required|string|',
                 'tipo' => 'required|string',
-                'usuario_id_cadastrar' => 'requeired|string',
+                'imagem' => 'nullable|image|max:10000000000'
                 
             ]);
 
             try {
                 $usuario = new Usuario();
-                $usuario->usuario_id = $request->usuario_id_cadastrar;
+                if ($request->hasFile('imagem')){
+                $imagem = $request->file('imagem');
+                $caminho = $imagem->store('imagens', 'public');
+                $usuario->imagem = $caminho;
+            }
+               
                 $usuario->nome = $request->nome;
                 $usuario->email = $request->email;
                 $usuario->senha = Hash::make($request->senha);
