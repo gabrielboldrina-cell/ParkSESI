@@ -12,7 +12,7 @@
             <tr>
                 <th scope="col">Nome</th>
                 <th scope="col">Email</th>
-                <th scope="col">Departamento</th>
+                <th scope="col">Departamento</th>   
                 <th scope="col">modelo</th>
                 <th scope="col">marca</th>
                 <th scope="col">cor</th>
@@ -28,7 +28,7 @@
                 <td>{{$d['modelo']}}</td>
                 <td>{{$d['marca']}}</td>
                 <td>{{$d['cor']}}</td>
-                <td>{{$d['situacao']}}</td>
+                <td>{{$d['situacao']}}</td> 
                 
             </tr>
             @endforeach

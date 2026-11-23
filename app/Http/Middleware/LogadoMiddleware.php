@@ -48,7 +48,7 @@ class LogadoMiddleware
             Cookie::forget('usuario_id');
             Cookie::forget('token');
             
-            return redirect()->route('login_teste');
+            return redirect()->route('Login');
         }
 
         }

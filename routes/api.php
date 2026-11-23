@@ -19,27 +19,27 @@ Route::get('/listar_usuarios', [UsuarioController::class, 'listar_usuarios'])->m
 Route::get('/listar_usuarios_simples', [UsuarioController::class, 'listar_usuarios_simples'])->middleware(AdminLogadoMiddleware::class)->name('listar_usuarios_simples');
 
 //Rotas para o CRUD de colaboradores
-Route::post('/salvar_colaborador', [ColaboradorController::class, 'salvar_colaborador']);
+Route::post('/salvar_colaborador', [ColaboradorController::class, 'salvar_colaborador'])->middleware(AdminLogadoMiddleware::class);
 Route::put('/alterar_colaborador', [ColaboradorController::class, 'alterar_colaborador'])->middleware(AdminLogadoMiddleware::class);
 Route::delete('/deletar_colaborador', [ColaboradorController::class, 'deletar_colaborador'])->middleware(AdminLogadoMiddleware::class);
 Route::get('/listar_colaboradores', [ColaboradorController::class, 'listar_colaboradores'])->middleware(AdminLogadoMiddleware::class)->name('listar_colaboradores');
 Route::get('/listar_colaboradores_simples', [ColaboradorController::class, 'listar_colaboradores_simples'])->middleware(AdminLogadoMiddleware::class)->name('listar_colaboradores_simples');
 
 //Rotas para o CRUD de veículos
-Route::post('/salvar_veiculo', [CadastroVeiculoController::class, 'salvar_veiculo']);
+Route::post('/salvar_veiculo', [CadastroVeiculoController::class, 'salvar_veiculo'])->middleware(AdminLogadoMiddleware::class);
 Route::put('/alterar_veiculo', [CadastroVeiculoController::class, 'alterar_veiculo'])->middleware(AdminLogadoMiddleware::class);
 Route::delete('/deletar_veiculo', [CadastroVeiculoController::class, 'deletar_veiculo'])->middleware(AdminLogadoMiddleware::class);
 Route::get('/listar_veiculos', [CadastroVeiculoController::class, 'listar_veiculos'])->middleware(AdminLogadoMiddleware::class)->name('listar_veiculos');
 Route::get('/listar_veiculos_simples', [CadastroVeiculoController::class, 'listar_veiculos_simples'])->middleware(AdminLogadoMiddleware::class)->name('listar_veiculos_simples');
 
 //Rotas para o CRUD de carros de colaboradores
-Route::post('/salvar_CarroColaborador', [CarroColaboradorController::class, 'salvar_CarroColaborador']);
+Route::post('/salvar_CarroColaborador', [CarroColaboradorController::class, 'salvar_CarroColaborador'])->middleware(AdminLogadoMiddleware::class);
 Route::put('/alterar_CarroColaborador', [CarroColaboradorController::class, 'alterar_CarroColaborador'])->middleware(AdminLogadoMiddleware::class);
 Route::delete('/deletar_CarroColaborador', [CarroColaboradorController::class, 'deletar_CarroColaborador'])->middleware(AdminLogadoMiddleware::class);
 Route::get('/listar_CarroColaborador', [CarroColaboradorController::class, 'listar_CarroColaborador'])->middleware(AdminLogadoMiddleware::class)->name('listar_CarroColaborador');
 
 //Routas para o CRUD de movimentações de carros
-Route::post('/salvar_CarroMovimentacoes', [CarroMovimentacoesController::class, 'salvar_CarroMovimentacoes']);
+Route::post('/salvar_CarroMovimentacoes', [CarroMovimentacoesController::class, 'salvar_CarroMovimentacoes'])->middleware(AdminLogadoMiddleware::class);
 Route::put('/alterar_CarroMovimentacoes', [CarroMovimentacoesController::class, 'alterar_CarroMovimentacoes'])->middleware(AdminLogadoMiddleware::class);
 Route::delete('/deletar_CarroMovimentacoes', [CarroMovimentacoesController::class, 'deletar_CarroMovimentacoes'])->middleware(AdminLogadoMiddleware::class);
 Route::get('/listar_CarroMovimentacoes', [CarroMovimentacoesController::class, 'listar_CarroMovimentacoes'])->middleware(AdminLogadoMiddleware::class)->name('listar_CarroMovimentacoes');
