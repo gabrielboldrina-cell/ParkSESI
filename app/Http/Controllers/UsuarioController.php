@@ -22,6 +22,7 @@ class UsuarioController extends Controller
                 'senha' => 'required|string|',
                 'tipo' => 'required|string',
                 'usuario_id_cadastrar' => 'requeired|string',
+                
             ]);
 
             try {

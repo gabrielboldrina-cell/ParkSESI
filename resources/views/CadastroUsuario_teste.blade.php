@@ -23,17 +23,23 @@
                 <input type="text" class="form-control form-control-sm" id="tipo">
             </div>
             <div class="mb-3 col-6">
-                 <label for="tipo" class="form-label">Usuario</label>
+                <label for="tipo" class="form-label">Usuario</label>
                 <select class="form-select  form-select-sm" id="usuario">
                     @foreach ($usuarios as $u)
                         <option value="{{ $u['id'] }}">{{ $u['nome'] }}</option>
                     @endforeach
                 </select>
-            
             </div>
 
-            <button type="button" id="cadastrar" class="btn btn-primary btn-sm mt-2">Cadastrar </button>
+            <div class="mb-3 col-6">
+                <label for="formFile" class="form-label">Default file input example</label>
+                <input class="form-control" type="file" id="imagem">
+            </div>
         </div>
+    </div>
+
+    <button type="button" id="cadastrar" class="btn btn-primary btn-sm mt-2">Cadastrar </button>
+    </div>
     </div>
 
 @endsection

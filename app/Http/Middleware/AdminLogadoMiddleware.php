@@ -50,7 +50,6 @@ class AdminLogadoMiddleware
     } else {
         Cookie::forget('usuario_id');
         Cookie::forget('token');
-        
         return redirect()->route('Login');
     }
     }

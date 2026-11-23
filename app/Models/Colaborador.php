@@ -19,6 +19,7 @@ class Colaborador extends Model
         'situacao',
         'saida_almoco',
         'volta_almoco',
+        'imagem',
     ];
 
     public function carro_colaborador()
