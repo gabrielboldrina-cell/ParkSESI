@@ -59,7 +59,6 @@ Seu funcionamento acontece por meio das seguintes etapas:
 **Backend**
 - PHP
 - Laravel
-- Eloquent ORM
 - API REST
 
 **Banco de dados**
@@ -68,7 +67,7 @@ Seu funcionamento acontece por meio das seguintes etapas:
 **Frontend**
 - HTML5
 - CSS3
-- JavaScript
+- JavaScript/Jquery
 - Bootstrap
 
 ## 📱 Responsividade
