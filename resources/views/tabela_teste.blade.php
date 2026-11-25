@@ -22,10 +22,11 @@
                 <td>{{$d['nome']}}</td>
                 <td>{{$d['email']}}</td>
                 <td>{{$d['tipo']}}</td>
-                @if(isset($d['imagem']))
+              <td>  @if(isset($d['imagem']))
                 <img src="{{ Storage::url($d ['imagem']) }}"
-                alt="imagem" sytle="max-width: 100px; max-height: 100px;">  
+                alt="imagem" sytle="max-width: 50px; max-height: 50px;">  
                 @endif
+              </td>
 
             </tr>
             @endforeach
