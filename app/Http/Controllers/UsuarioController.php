@@ -167,7 +167,11 @@ class UsuarioController extends Controller
         return view('CadastroUsuario_teste')->with('usuarios', $usuarios);
     }
 
-    
+    public function tabela_teste(Request $request){
+        $dados = Usuario::select('usuarios.nome','usuarios.email',
+        'usuarios.tipo', 'usuarios.imagem')->get()->all();
+        return view('tabela_teste')->with('dados', $dados);
+    }   
    
 
         

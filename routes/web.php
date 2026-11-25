@@ -38,3 +38,4 @@ Route::get('/sem_acesso_teste', [sem_acesso_testeController::class, 'sem_acesso_
 Route::get('/painel_teste', [AdminController::class, 'PainelGeral'])->middleware(AdminLogadoMiddleware::class)->name('PainelGeral');
 Route::get('/cadastrar_usuario',[CadastroUsuarioController::class, 'cadastrar_usuario'])->middleware(AdminLogadoMiddleware::class)->name('cadastrar_usuario');
 Route::get('/tabela_html',[UsuarioController::class,'tabela_html']);
+Route::get('/tabela_teste', [UsuarioController::class,'tabela_teste'])->name('tabela_teste');

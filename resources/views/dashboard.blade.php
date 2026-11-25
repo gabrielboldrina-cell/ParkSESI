@@ -30,10 +30,10 @@
                 <td>{{$d['marca']}}</td>
                 <td>{{$d['cor']}}</td>
                 <td>{{$d['situacao']}}</td> 
-                @if(isset($d('imagem')))
-                <img src="{{ Storage::url }}"
-                    
-                @endisset
+                @if(isset($d['imagem'])
+                <img src="{{ Storage::url($d ['imagem']) }}"
+                alt="imagem" sytle="max-width: 100px; max-height: 100px;">  
+                @endif
                
             </tr>
             @endforeach

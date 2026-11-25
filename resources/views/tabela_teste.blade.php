@@ -12,11 +12,8 @@
             <tr>
                 <th scope="col">Nome</th>
                 <th scope="col">Email</th>
-                <th scope="col">Departamento</th>   
-                <th scope="col">modelo</th>
-                <th scope="col">marca</th>
-                <th scope="col">cor</th>
-                <th scope="col">Situação</th>
+                <th scope="col">Tipo</th>   
+                <th scope="col">Imagem</th>
             </tr>
         </thead>
         <tbody>
@@ -24,12 +21,12 @@
             <tr>
                 <td>{{$d['nome']}}</td>
                 <td>{{$d['email']}}</td>
-                <td>{{$d['departamento']}}</td>
-                <td>{{$d['modelo']}}</td>
-                <td>{{$d['marca']}}</td>
-                <td>{{$d['cor']}}</td>
-                <td>{{$d['situacao']}}</td> 
-                
+                <td>{{$d['tipo']}}</td>
+                @if(isset($d['imagem']))
+                <img src="{{ Storage::url($d ['imagem']) }}"
+                alt="imagem" sytle="max-width: 100px; max-height: 100px;">  
+                @endif
+
             </tr>
             @endforeach
         </tbody>
