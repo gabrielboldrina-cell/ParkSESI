@@ -14,6 +14,7 @@ export default defineConfig({
                  'resources/css/CadastroUsuario.css',
                  'resources/css/CadastroColaborador.css',
                  'resources/css/footer.css',
+                 'resources/js/tabela.js',
                  
                 ],
             refresh: true,
