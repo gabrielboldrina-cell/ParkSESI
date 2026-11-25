@@ -12,7 +12,8 @@ export default defineConfig({
                  'resources/js/Index.js',
                  'resources/js/cadastroUsuario.js',
                  'resources/css/CadastroUsuario.css',
-                 'resources/css/CadastroColaborador.css'
+                 'resources/css/CadastroColaborador.css',
+                 'resources/css/footer.css',
                  
                 ],
             refresh: true,

@@ -5,7 +5,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
-   <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css" rel="stylesheet"
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css" rel="stylesheet"
         integrity="sha384-sRIl4kxILFvY47J16cr9ZwB07vP4J8+LH7qKQnuqkuIAvNWLzeN8tE5YBujZqJLB" crossorigin="anonymous">
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js"
         integrity="sha384-FKyoEForCGlyvwx9Hj09JcYn3nv7wiPVlz7YYwJrWVcXK/BmnVDxM+D2scQbITxI" crossorigin="anonymous">
@@ -14,8 +14,9 @@
         integrity="sha256-/JqT3SQfawRcv/BIHPThkBvs0OEvtFFmqPF/lYI/Cxo=" crossorigin="anonymous"></script>
     <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-cookie/1.4.1/jquery.cookie.min.js" integrity="sha512-3j3VU6WC5rPQB4Ld1jnLV7Kd5xr+cq9avvhwqzbH/taCRNURoeEpoPBK9pDyeukwSxwRPJ8fDgvYXd6SkaZ2TA==
-     " crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+         " crossorigin="anonymous" referrerpolicy="no-referrer"></script>
     <title>@yield('title')</title>
+    @vite('resources/css/footer.css')
 </head>
 
 <body style="background-color: #808080;">
@@ -23,7 +24,7 @@
     <nav class="navbar navbar-expand-lg" data-bs-theme="dark" style="background-color: #595959;">
         <div class="container-fluid ps-1">
             <a class="navbar-brand" href="#">
-              <img src="Sesi-SP.jpg" alt="Bootstrap" width="100" height="34">
+                <img src="Sesi-SP.jpg" alt="Bootstrap" width="100" height="34">
             </a>
             <button class="navbar-toggler" type="button" data-bs-toggle="collapse"
                 data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false"
@@ -61,15 +62,14 @@
     <div class="container">
         @yield('content')
     </div>
-    <div class="row justify-content-center d-flex">
-        <footer class="footer">
-            <strong>PARKSESI © 2026</strong>
-            Sistema de Controle de Estacionamento — SESI
-            <div class="links">
-                <a href="#">Suporte</a> | <a href="#">Política de Privacidade</a>
-            </div>
-        </footer>
-    </div>
+    <footer class="footer mt-auto py-3 w-100">
+        <strong>PARKSESI © 2026</strong>
+        <div>Sistema de Controle de Estacionamento — SESI</div>
+        <div class="links">
+            <a href="#">Suporte</a> |
+            <a href="#">Política de Privacidade</a>
+        </div>
+    </footer>
 
 
 </body>

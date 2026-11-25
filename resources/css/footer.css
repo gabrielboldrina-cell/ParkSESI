@@ -1,0 +1,32 @@
+html, body {
+    min-height: 100%;
+    margin: 0;
+}
+
+body {
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+}
+
+.footer {
+    margin-top: auto;
+    width: 100%;
+    text-align: center;
+    padding: 20px;
+    background-color: #212529;
+    color: white;
+}
+
+.footer .links {
+    margin-top: 8px;
+}
+
+.footer .links a {
+    color: white;
+    text-decoration: none;
+}
+
+.footer .links a:hover {
+    text-decoration: underline;
+}
