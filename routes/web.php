@@ -10,7 +10,6 @@ use App\Http\Controllers\CadastroVeiculoController;
 use App\Http\Controllers\HomeController;
 use App\Http\Controllers\Recuperar_senhaController;
 use App\Http\Controllers\loginController;
-use App\Http\Controllers\Hometeste;
 use App\Http\Middleware\LogadoMiddleware;
 use App\Http\Middleware\AdminLogadoMiddleware;
 use App\Http\Controllers\AdminController;
