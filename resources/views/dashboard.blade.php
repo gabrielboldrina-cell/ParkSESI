@@ -16,6 +16,8 @@
                 <th scope="col">marca</th>
                 <th scope="col">cor</th>
                 <th scope="col">Situação</th>
+                <th scope="col">imagem</th>
+
             </tr>
         </thead>
         <tbody>
@@ -28,7 +30,11 @@
                 <td>{{$d['marca']}}</td>
                 <td>{{$d['cor']}}</td>
                 <td>{{$d['situacao']}}</td> 
-                
+                @if(isset($d('imagem')))
+                <img src="{{ Storage::url }}"
+                    
+                @endisset
+               
             </tr>
             @endforeach
         </tbody>

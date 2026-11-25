@@ -12,10 +12,8 @@ use App\Models\Usertoken;
 
 class UsuarioController extends Controller
 {
-    
-
-        public function salvar_usuario(Request $request)
-        {
+        public function salvar_usuario(Request $request){
+            
             $request->validate([
                 'nome' => 'required|string|max:255',
                 'email' => 'required|string|email|max:255|unique:usuarios',
@@ -32,7 +30,6 @@ class UsuarioController extends Controller
                 $caminho = $imagem->store('imagens', 'public');
                 $usuario->imagem = $caminho;
             }
-               
                 $usuario->nome = $request->nome;
                 $usuario->email = $request->email;
                 $usuario->senha = Hash::make($request->senha);

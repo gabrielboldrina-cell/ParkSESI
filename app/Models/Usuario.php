@@ -14,6 +14,7 @@ class Usuario extends Model
         'email',
         'senha',
         'tipo',
+        'imagem'
     ];
 
     public function admin()
